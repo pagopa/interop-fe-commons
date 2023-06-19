@@ -29,7 +29,12 @@ export function InformationContainer({
   ...props
 }: InformationContainerProps) {
   return (
-    <Stack spacing={direction === 'column' ? 0 : 4} direction={direction} {...props}>
+    <Stack
+      spacing={direction === 'column' ? 0 : 4}
+      direction={direction}
+      alignItems={direction === 'column' ? 'flex-start' : 'center'}
+      {...props}
+    >
       <Box sx={{ flexShrink: 0, maxWidth: direction === 'column' ? 'none' : '200px', flex: 1 }}>
         <Typography variant="body2">{label}</Typography>
         {labelDescription && (
@@ -41,16 +46,20 @@ export function InformationContainer({
           </>
         )}
       </Box>
-      <Box sx={{ flex: 1 }}>
+      <Stack direction="row" alignItems="center" sx={{ flex: 1 }}>
         <Typography
           component={typeof content === 'string' ? 'p' : 'div'}
           variant="body2"
           fontWeight={600}
         >
           {content}
-          {copyToClipboard && <CopyToClipboardButton {...copyToClipboard} />}
         </Typography>
-      </Box>
+        {copyToClipboard && (
+          <Box sx={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+            <CopyToClipboardButton {...copyToClipboard} />
+          </Box>
+        )}
+      </Stack>
     </Stack>
   )
 }
