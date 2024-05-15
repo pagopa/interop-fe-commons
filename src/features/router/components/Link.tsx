@@ -34,7 +34,7 @@ export function generateTypedLink<TRoutes extends Routes>(
       (
         | ({ as?: 'link' } & Omit<MUILinkProps<typeof RRDLink>, 'component' | 'to' | 'href'>)
         | ({ as: 'button' } & Omit<
-            MUIButtonProps,
+            MUIButtonProps<'a'>,
             'onClick' | 'href' | 'to' | 'LinkComponent' | 'component'
           >)
       ),
