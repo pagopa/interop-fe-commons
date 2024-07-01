@@ -16,7 +16,7 @@ function createMemoryHistoryWithTestSearchParams(searchParams: Record<string, st
   return memoryHistory
 }
 
-function renderUsePaginationHook(options: { limit: number }, history?: History) {
+function renderUsePaginationHook(options: Parameters<typeof usePagination>[0], history?: History) {
   return renderHook(() => usePagination(options), {
     wrapper: ({ children }) => (
       <TestingRouterWrapper history={history}>{children}</TestingRouterWrapper>
@@ -120,6 +120,20 @@ describe('usePagination testing', () => {
     throws(() => {
       result.current.paginationProps.onPageChange(0)
     })
+  })
+
+  it("should not sync the url params if 'syncUrlParams' is false", () => {
+    const history = createMemoryHistory()
+    const { result } = renderUsePaginationHook({ limit: 25, syncUrlParams: false }, history)
+
+    expect(history.location.search).toEqual('')
+
+    act(() => {
+      result.current.paginationProps.onPageChange(2)
+    })
+
+    expect(history.location.search).toEqual('')
+    expect(result.current.paginationParams.offset).toEqual(25)
   })
 
   it('Should get the correct total page count', () => {

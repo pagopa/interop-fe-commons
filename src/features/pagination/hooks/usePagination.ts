@@ -4,7 +4,9 @@ import { useSearchParams } from 'react-router-dom'
 /**
  * @description
  * This hook is used to manage the pagination state keeping it in sync with the url params.
- * @param options - An object with a `limit` property used to calculate the current page number.
+ * @param options - The options for pagination.
+ * @param options.limit - The number of items per page.
+ * @param options.syncUrlParams- If true, the hook will sync the pagination state with the URL params. @default true
  * @returns The pagination params, pagination props to be passed to the `Pagination` component and a function to get the total page count.
  * @example
  * const {
@@ -20,11 +22,19 @@ import { useSearchParams } from 'react-router-dom'
  * )
  *
  */
-export function usePagination(options: { limit: number }) {
+export function usePagination({
+  limit,
+  syncUrlParams = true,
+}: {
+  limit: number
+  syncUrlParams?: boolean
+}) {
   const [searchParams, setSearchParams] = useSearchParams()
+  const [offsetInternalState, setOffsetInternalState] = React.useState(0)
 
-  const offset = parseInt(searchParams.get('offset') ?? '0', 10)
-  const limit = options.limit
+  const offset = syncUrlParams
+    ? parseInt(searchParams.get('offset') ?? '0', 10)
+    : offsetInternalState
 
   const pageNum = Math.ceil(offset / limit) + 1
 
@@ -33,25 +43,29 @@ export function usePagination(options: { limit: number }) {
       if (newPage < 1) {
         throw new Error(`Number of page ${newPage} is not valid`)
       }
-      window.scroll(0, 0)
-      const newOffset = (newPage - 1) * limit
+      const newOffset = Math.max(0, (newPage - 1) * limit)
 
-      // Syncs the new offset to the "offset" search param
-      if (newOffset > 0) {
+      if (syncUrlParams) {
+        // Syncs the new offset to the "offset" search param
+        if (newOffset > 0) {
+          setSearchParams((searchParams) => {
+            searchParams.set('offset', newOffset.toString())
+            return searchParams
+          })
+          return
+        }
+
+        // Removes the search param "offset" if the offset is 0 (page == 1)
         setSearchParams((searchParams) => {
-          searchParams.set('offset', newOffset.toString())
+          searchParams.delete('offset')
           return searchParams
         })
-        return
+        window.scroll(0, 0)
+      } else {
+        setOffsetInternalState(newOffset)
       }
-
-      // Removes the search param "offset" if the offset is 0 (page == 1)
-      setSearchParams((searchParams) => {
-        searchParams.delete('offset')
-        return searchParams
-      })
     },
-    [limit, setSearchParams]
+    [limit, syncUrlParams, setSearchParams]
   )
 
   const getTotalPageCount = React.useCallback(
