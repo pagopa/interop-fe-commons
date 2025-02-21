@@ -16,7 +16,7 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3
         with:
-          node-version: '16.x'
+          node-version: ' 22.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm run test
