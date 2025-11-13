@@ -4,11 +4,7 @@ import { PaginationExample } from '../stories/PaginationExample'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 
-describe.only('Pagination component', () => {
-  // const renderPagination = () => {
-  //   return render(<Pagination pageNum={1} totalPages={2} onPageChange={vi.fn()} />)
-  // }
-
+describe('Pagination component', () => {
   describe('Render pagination without rowsPerPage selector and with 100 as total elements', () => {
     it('Should render correctly', () => {
       const screen = render(<PaginationExample />)
@@ -17,7 +13,6 @@ describe.only('Pagination component', () => {
 
     it('Should not render select with rows per page options', () => {
       const screen = render(<PaginationExample />)
-      screen.debug()
       const selectElement = screen.queryByTestId('rows-per-page-select')
       expect(selectElement).toBeNull()
     })
@@ -44,6 +39,33 @@ describe.only('Pagination component', () => {
       await waitFor(() => {
         const buttonAfterClick = screen.getByText('5')
         expect(buttonAfterClick).toHaveClass('Mui-selected')
+      })
+    })
+  })
+
+  describe('Render pagination with rowsPerPage selector enabled and with 100 as total elements', () => {
+    it('Should render correctly', () => {
+      const screen = render(<PaginationExample withRowsPerPage />)
+      expect(screen).toBeDefined()
+    })
+
+    it('Should be available [10,24,36] as rows per page as default options', async () => {
+      const screen = render(<PaginationExample withRowsPerPage />)
+      const selectElement = screen.getAllByRole('button', {
+        name: /10/i,
+      })[0]
+
+      expect(selectElement).toBeDefined()
+
+      await userEvent.click(selectElement)
+
+      await waitFor(() => {
+        const getOptions = screen.getAllByRole('option')
+        expect(getOptions).toHaveLength(3)
+
+        expect(getOptions[0]).toHaveTextContent('10')
+        expect(getOptions[1]).toHaveTextContent('24')
+        expect(getOptions[2]).toHaveTextContent('36')
       })
     })
   })

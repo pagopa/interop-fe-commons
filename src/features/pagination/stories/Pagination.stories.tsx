@@ -8,3 +8,4 @@ export default {
 } as Meta<typeof PaginationExample>
 
 export const Pagination: StoryFn = () => <PaginationExample />
+export const PaginationWithRowsPerTable: StoryFn = () => <PaginationExample withRowsPerPage />
