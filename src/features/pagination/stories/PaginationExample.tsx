@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter, useLocation } from 'react-router-d
 import { CodeBlock } from '@/components'
 
 export const _PaginationExample: React.FC = () => {
-  const { paginationParams, paginationProps, getTotalPageCount } = usePagination({ limit: 10 })
+  const { paginationParams, paginationProps, getTotalPageCount } = usePagination()
   const [debug, setDebug] = React.useState(false)
   const location = useLocation()
 

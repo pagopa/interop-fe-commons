@@ -1,3 +1,4 @@
+import { on } from 'events'
 import React from 'react'
 import { useSearchParams } from 'react-router-dom'
 
@@ -20,11 +21,11 @@ import { useSearchParams } from 'react-router-dom'
  * )
  *
  */
-export function usePagination(options: { limit: number }) {
+export function usePagination(options?: { limit: number }) {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const offset = parseInt(searchParams.get('offset') ?? '0', 10)
-  const limit = options.limit
+  const limit = options?.limit || parseInt(searchParams.get('limit') ?? '10', 10)
 
   const pageNum = Math.ceil(offset / limit) + 1
 
@@ -61,9 +62,26 @@ export function usePagination(options: { limit: number }) {
     [limit]
   )
 
+  const handleLimitChange = React.useCallback(
+    (newLimit: number) => {
+      if (newLimit < 1) {
+        throw new Error(`Number of items per page ${newLimit} is not valid`)
+      }
+
+      window.scroll(0, 0)
+      setSearchParams((searchParams) => {
+        searchParams.set('limit', newLimit.toString())
+        searchParams.delete('offset')
+        return searchParams
+      })
+    },
+    [setSearchParams]
+  )
+
   const paginationProps = {
     pageNum,
     onPageChange: handlePageChange,
+    onLimitChange: handleLimitChange,
   }
 
   const paginationParams = { limit, offset }
