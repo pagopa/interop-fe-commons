@@ -2,8 +2,9 @@ import React from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { z } from 'zod'
 
-const limitSchema = z.coerce.number().int().positive().catch(10)
-const offsetSchema = z.coerce.number().int().min(0).catch(0)
+const paramsSchema = z.coerce.number().int().positive()
+const limitSchema = paramsSchema.catch(10)
+const offsetSchema = paramsSchema.catch(0)
 
 /**
  * @description
