@@ -10,14 +10,14 @@ export const _PaginationExample: React.FC<{ withRowsPerPage?: boolean }> = ({
   const { paginationParams, paginationProps, getTotalPageCount } = usePagination()
   const [debug, setDebug] = React.useState(false)
   const location = useLocation()
-
   const totalPages = getTotalPageCount(100)
+
+  const { onLimitChange, ...restPaginationProps } = paginationProps
 
   const rowsPerPageProps = withRowsPerPage
     ? {
-        enabled: true,
-        handleLimitChange: paginationProps.onLimitChange,
-        limit: 10,
+        onLimitChange: onLimitChange,
+        limit: paginationParams.limit,
       }
     : undefined
 
@@ -35,8 +35,8 @@ export const _PaginationExample: React.FC<{ withRowsPerPage?: boolean }> = ({
       <Container sx={{ mt: 4, p: 2 }}>
         <Pagination
           totalPages={totalPages}
-          {...paginationProps}
-          enabledRowsPerPageProps={rowsPerPageProps}
+          {...restPaginationProps}
+          rowPerPageOptions={rowsPerPageProps}
         />
       </Container>
       <Container sx={{ bgcolor: debug ? 'white' : 'initial', mt: 4, py: 4 }}>

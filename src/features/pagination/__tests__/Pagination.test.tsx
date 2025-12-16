@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, waitFor } from '@testing-library/react'
+import { render, waitFor, within } from '@testing-library/react'
 import { PaginationExample } from '../stories/PaginationExample'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
@@ -51,13 +51,11 @@ describe('Pagination component', () => {
 
     it('Should be available [10,24,36] as rows per page as default options', async () => {
       const screen = render(<PaginationExample withRowsPerPage />)
-      const selectElement = screen.getAllByRole('button', {
-        name: /10/i,
-      })[0]
+      const selectElement = screen.getByTestId('rows-per-page-select')
+      const selectButton = within(selectElement).getByRole('button')
 
       expect(selectElement).toBeDefined()
-
-      await userEvent.click(selectElement)
+      await userEvent.click(selectButton)
 
       await waitFor(() => {
         const getOptions = screen.getAllByRole('option')

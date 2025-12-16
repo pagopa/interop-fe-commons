@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom'
 /**
  * @description
  * This hook is used to manage the pagination state keeping it in sync with the url params.
- * @param options - An object with a `limit` property used to calculate the current page number.
+ * @param options - An object with a `limit` property used to calculate the current page number. If options has not passed by default limit will be "10".
  * @returns The pagination params, pagination props to be passed to the `Pagination` component and a function to get the total page count.
  * @example
  * const {

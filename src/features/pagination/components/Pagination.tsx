@@ -1,4 +1,5 @@
 import React from 'react'
+import type { InputBaseComponentProps } from '@mui/material'
 import {
   MenuItem,
   Pagination as MUIPagination,
@@ -14,11 +15,11 @@ export interface PaginationProps extends StackProps {
   totalPages: number
   pageNum: number
   sx?: SxProps<InteropTheme>
-  enabledRowsPerPageProps?: {
-    enabled: boolean
+  rowPerPageOptions?: {
     options?: number[]
-    handleLimitChange: (limit: number) => void
+    onLimitChange: (limit: number) => void
     limit: number
+    inputProps?: InputBaseComponentProps
   }
 
   onPageChange: (numPage: number) => void
@@ -32,10 +33,10 @@ export const Pagination: React.FC<PaginationProps> = ({
   onPageChange,
   pageNum,
   sx,
-  enabledRowsPerPageProps,
+  rowPerPageOptions,
   ...stackProps
 }) => {
-  const rowsPerPageOptions = enabledRowsPerPageProps?.options || defaultOptions
+  const pageOptionsValues = rowPerPageOptions?.options || defaultOptions
 
   if (totalPages <= 1) return null
   return (
@@ -46,18 +47,20 @@ export const Pagination: React.FC<PaginationProps> = ({
       alignItems="center"
       {...stackProps}
     >
-      {enabledRowsPerPageProps && enabledRowsPerPageProps.enabled && (
+      {rowPerPageOptions && (
         <Select
           size="small"
           labelId="rows-per-page-select"
           id="rows-per-page-select"
           data-testid="rows-per-page-select"
-          value={enabledRowsPerPageProps.limit}
-          onChange={(event) =>
-            enabledRowsPerPageProps.handleLimitChange(event.target.value as number)
-          }
+          value={rowPerPageOptions.limit}
+          inputProps={{
+            'aria-label': 'Select number of rows per page',
+            ...rowPerPageOptions?.inputProps,
+          }}
+          onChange={(event) => rowPerPageOptions.onLimitChange(event.target.value as number)}
         >
-          {rowsPerPageOptions.map((option) => (
+          {pageOptionsValues.map((option) => (
             <MenuItem key={option} value={option}>
               {option}
             </MenuItem>
