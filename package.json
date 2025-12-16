@@ -70,7 +70,9 @@
     "typescript": "^5.2.2",
     "vite": "^4.5.9",
     "vite-plugin-dts": "^3.5.3",
-    "vitest": "^0.34.4"
+    "vitest": "^0.34.4",
+    "zod": "^4.0.0"
+
   },
   "license": "MIT",
   "peerDependencies": {
@@ -90,7 +92,8 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.46.1",
     "react-i18next": "^13.2.2",
-    "react-router-dom": "^6.16.0"
+    "react-router-dom": "^6.16.0",
+    "zod": "^4.0.0"
   },
   "files": [
     "dist"

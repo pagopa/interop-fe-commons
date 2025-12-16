@@ -1,5 +1,9 @@
 import React from 'react'
 import { useSearchParams } from 'react-router-dom'
+import { z } from 'zod'
+
+const limitSchema = z.coerce.number().int().positive().catch(10)
+const offsetSchema = z.coerce.number().int().min(0).catch(0)
 
 /**
  * @description
@@ -23,8 +27,8 @@ import { useSearchParams } from 'react-router-dom'
 export function usePagination(options?: { limit: number }) {
   const [searchParams, setSearchParams] = useSearchParams()
 
-  const offset = parseInt(searchParams.get('offset') ?? '0', 10)
-  const limit = options?.limit || parseInt(searchParams.get('limit') ?? '10', 10)
+  const offset = offsetSchema.parse(searchParams.get('offset'))
+  const limit = limitSchema.parse(options?.limit || searchParams.get('limit'))
 
   const pageNum = Math.ceil(offset / limit) + 1
 
