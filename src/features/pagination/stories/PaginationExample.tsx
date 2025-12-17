@@ -4,12 +4,22 @@ import { Box, Button, Container, Stack, Typography } from '@mui/material'
 import { RouterProvider, createBrowserRouter, useLocation } from 'react-router-dom'
 import { CodeBlock } from '@/components'
 
-export const _PaginationExample: React.FC = () => {
-  const { paginationParams, paginationProps, getTotalPageCount } = usePagination({ limit: 10 })
+export const _PaginationExample: React.FC<{ withRowsPerPage?: boolean }> = ({
+  withRowsPerPage,
+}) => {
+  const { paginationParams, paginationProps, getTotalPageCount } = usePagination()
   const [debug, setDebug] = React.useState(false)
   const location = useLocation()
-
   const totalPages = getTotalPageCount(100)
+
+  const { onLimitChange, ...restPaginationProps } = paginationProps
+
+  const rowsPerPageProps = withRowsPerPage
+    ? {
+        onLimitChange: onLimitChange,
+        limit: paginationParams.limit,
+      }
+    : undefined
 
   const urlSearchParams = new URLSearchParams(location.search)
   // Remove all params except offset
@@ -23,7 +33,11 @@ export const _PaginationExample: React.FC = () => {
   return (
     <>
       <Container sx={{ mt: 4, p: 2 }}>
-        <Pagination totalPages={totalPages} {...paginationProps} />
+        <Pagination
+          totalPages={totalPages}
+          {...restPaginationProps}
+          rowPerPageOptions={rowsPerPageProps}
+        />
       </Container>
       <Container sx={{ bgcolor: debug ? 'white' : 'initial', mt: 4, py: 4 }}>
         <Button variant="naked" onClick={() => setDebug(!debug)}>
@@ -48,6 +62,10 @@ export const _PaginationExample: React.FC = () => {
 
 const router = createBrowserRouter([{ path: '*', element: <_PaginationExample /> }])
 
-export const PaginationExample: React.FC = () => {
-  return <RouterProvider router={router} />
+const routerPaginationWithoutRowsPerPage = createBrowserRouter([
+  { path: '*', element: <_PaginationExample withRowsPerPage /> },
+])
+
+export const PaginationExample: React.FC<{ withRowsPerPage?: boolean }> = ({ withRowsPerPage }) => {
+  return <RouterProvider router={withRowsPerPage ? routerPaginationWithoutRowsPerPage : router} />
 }
