@@ -43,7 +43,7 @@ export const Pagination: React.FC<PaginationProps> = ({
     <Stack
       sx={{ mt: 2, ...sx }}
       direction="row"
-      justifyContent="space-between"
+      justifyContent={rowPerPageOptions ? 'space-between' : 'flex-end'}
       alignItems="center"
       {...stackProps}
     >
@@ -69,6 +69,7 @@ export const Pagination: React.FC<PaginationProps> = ({
       )}
 
       <MUIPagination
+        sx={{ alignSelf: 'flex-end' }}
         color="primary"
         page={pageNum}
         count={totalPages}
