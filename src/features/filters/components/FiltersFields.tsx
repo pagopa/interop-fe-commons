@@ -1,22 +1,26 @@
 import React from 'react'
-import { Grid } from '@mui/material'
+import { Button, Grid } from '@mui/material'
 import type {
   FilterFieldValue,
   FilterFieldsValues,
   FilterFields,
-  FiltersHandler,
+  FilterHandler,
 } from '../filters.types'
 import { AutocompleteMultipleFilterField } from './AutocompleteMultipleFilterField'
 import { AutocompleteSingleFilterField } from './AutocompleteSingleFilterField'
 import { DatepickerFilterField } from './DatepickerFilterField'
 import { NumericFilterField } from './NumericFilterField'
 import { FreetextFilterField } from './FreetextFilterField'
+import { getLocalizedValue } from '@/utils/common.utils'
 
 type FiltersFieldsProps = {
   fields: FilterFields
-  onChangeActiveFilter: FiltersHandler
+  onChangeActiveFilter: FilterHandler
   fieldsValues: FilterFieldsValues
   onFieldsValuesChange: (name: string, value: FilterFieldValue) => void
+  onResetActiveFilters: VoidFunction
+  onSubmit: VoidFunction
+  hasSubmitButton?: boolean
 }
 
 export const FiltersFields: React.FC<FiltersFieldsProps> = ({
@@ -24,7 +28,19 @@ export const FiltersFields: React.FC<FiltersFieldsProps> = ({
   fieldsValues,
   onFieldsValuesChange,
   onChangeActiveFilter,
+  onResetActiveFilters,
+  onSubmit,
+  hasSubmitButton,
 }) => {
+  const cancelFiltersLabel = getLocalizedValue({
+    it: 'Annulla filtri',
+    en: 'Cancel filters',
+  })
+
+  const submitFiltersLabel = getLocalizedValue({
+    it: 'Filtra',
+    en: 'Filter',
+  })
   return (
     <Grid container spacing={2}>
       {fields.map((field) => {
@@ -33,6 +49,7 @@ export const FiltersFields: React.FC<FiltersFieldsProps> = ({
           value: fieldsValues[field.name],
           onChangeActiveFilter,
           onFieldsValuesChange,
+          hasSubmitButton,
         }
         return (
           <Grid item xs={3} key={field.name}>
@@ -48,6 +65,22 @@ export const FiltersFields: React.FC<FiltersFieldsProps> = ({
           </Grid>
         )
       })}
+      {hasSubmitButton && (
+        <Grid item xs={3} alignContent="center">
+          <Button size="small" type="button" variant="outlined" onClick={onSubmit}>
+            {submitFiltersLabel}
+          </Button>
+          <Button
+            sx={{ ml: 2 }}
+            size="small"
+            type="button"
+            variant="naked"
+            onClick={onResetActiveFilters}
+          >
+            {cancelFiltersLabel}
+          </Button>
+        </Grid>
+      )}
     </Grid>
   )
 }
