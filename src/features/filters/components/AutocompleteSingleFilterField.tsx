@@ -9,20 +9,24 @@ import { AutocompleteBaseFilterField } from './AutocompleteBaseFilterField'
 
 export const AutocompleteSingleFilterField: React.FC<FilterFieldCommonProps> = ({
   field: _field,
+  value,
   onChangeActiveFilter,
+  onFieldsValuesChange,
+  hasSubmitButton,
 }) => {
   const field = _field as AutocompleteFilterFieldOptions
   const filterKey = field.name
 
   const handleAutocompleteSingleChange = (data: FilterFieldsValues['string']) => {
-    onChangeActiveFilter('autocomplete-single', filterKey, data)
+    onFieldsValuesChange(filterKey, data)
+    if (!hasSubmitButton) onChangeActiveFilter('autocomplete-single', filterKey, data)
   }
 
   return (
     <AutocompleteBaseFilterField<false>
       label={field.label}
       blurOnSelect
-      value={null as unknown as FilterOption}
+      value={value as FilterOption}
       options={field.options}
       onInputChange={field?.onTextInputChange}
       onChange={(_, data) => {
