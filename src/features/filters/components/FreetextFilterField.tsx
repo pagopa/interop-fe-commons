@@ -9,6 +9,7 @@ export const FreetextFilterField: React.FC<FilterFieldCommonProps> = ({
   value,
   onChangeActiveFilter,
   onFieldsValuesChange,
+  hasSubmitButton,
 }) => {
   const searchIconAriaLabel = getLocalizedValue({ it: 'Filtra', en: 'Filter' })
   const filterKey = field.name
@@ -40,9 +41,9 @@ export const FreetextFilterField: React.FC<FilterFieldCommonProps> = ({
       name={field.name}
       value={value}
       onChange={handleFieldValueChange}
-      onKeyDown={handleKeyDown}
+      onKeyDown={hasSubmitButton ? undefined : handleKeyDown}
       InputProps={{
-        endAdornment: (
+        endAdornment: hasSubmitButton ? undefined : (
           <IconButton disabled={!value} sx={{ mx: -1.5 }} onClick={handleEnableFreetextFilter}>
             <SearchIcon aria-label={searchIconAriaLabel} />
           </IconButton>
