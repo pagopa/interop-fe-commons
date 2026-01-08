@@ -28,6 +28,10 @@ type FilterFieldCommon<TName extends string = string> = {
    * The label of the filter field.
    */
   label: string
+  /**
+   * The width of the filter field in a 12-column grid system.
+   */
+  width?: number
 }
 
 export type FreetextFilterFieldOptions<TName extends string = string> = FilterFieldCommon<TName> & {
