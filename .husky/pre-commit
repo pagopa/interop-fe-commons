@@ -1,14 +1,10 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-if command -v npx.cmd > /dev/null 2>&1; then
+if [ "$OSTYPE" = "msys" ] || [ "$OSTYPE" = "win32" ]; then
     npx.cmd lint-staged
-else
-    npx lint-staged
-fi
-
-if command -v npm.cmd > /dev/null 2>&1; then
     npm.cmd run test
 else
+    npx lint-staged
     npm run test
 fi
