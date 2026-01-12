@@ -14,7 +14,7 @@ type AutocompleteBaseFilterFieldProps<Multiple extends boolean> = Omit<
   | 'size'
   | 'renderInput'
   | 'onInputChange'
-> & { label: string; onInputChange?: (value: string) => void }
+> & { label: string; onInputChange?: (value: string) => void; hasSubmitButton?: boolean }
 
 export const AutocompleteBaseFilterField = <Multiple extends boolean>(
   props: AutocompleteBaseFilterFieldProps<Multiple>
@@ -23,6 +23,36 @@ export const AutocompleteBaseFilterField = <Multiple extends boolean>(
     it: 'Nessun risultato trovato',
     en: 'No results',
   })
+
+  function getSelectedElementsLabelText(): { label: string; ariaLabel: string } {
+    let label = props.label
+    let ariaLabel = props.label
+
+    if (props.hasSubmitButton && Array.isArray(props.value) && props.value.length >= 1) {
+      const selectedElements = props.value
+
+      label = getLocalizedValue({
+        it: `${props.label} (${selectedElements.length})`,
+        en: `${props.label} (${selectedElements.length})`,
+      })
+
+      if (props.value.length === 1) {
+        ariaLabel = getLocalizedValue({
+          it: `${props.label} (${selectedElements.length} elemento selezionato)`,
+          en: `${props.label} (${selectedElements.length} element selected)`,
+        })
+      }
+
+      if (props.value.length > 1) {
+        ariaLabel = getLocalizedValue({
+          it: `${props.label} (${selectedElements.length} elementi selezionati)`,
+          en: `${props.label} (${selectedElements.length} elements selected)`,
+        })
+      }
+    }
+
+    return { label, ariaLabel }
+  }
 
   return (
     <Autocomplete<FilterOption, Multiple, true, false>
@@ -46,7 +76,14 @@ export const AutocompleteBaseFilterField = <Multiple extends boolean>(
         props.onChange?.(event, data, reason)
       }}
       renderInput={(params) => {
-        return <TextField variant="outlined" {...params} label={props.label} />
+        return (
+          <TextField
+            variant="outlined"
+            {...params}
+            label={getSelectedElementsLabelText().label}
+            aria-label={getSelectedElementsLabelText().ariaLabel}
+          />
+        )
       }}
     />
   )

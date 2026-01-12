@@ -53,6 +53,7 @@ export const AutocompleteMultipleFilterField: React.FC<FilterFieldCommonProps> =
           </li>
         )
       }}
+      hasSubmitButton={hasSubmitButton}
     />
   )
 }
