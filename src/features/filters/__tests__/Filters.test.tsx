@@ -58,6 +58,7 @@ describe('Filters component', () => {
           <Filters
             fields={fieldMocks}
             activeFilters={[]}
+            onSetActiveFilters={vi.fn()}
             onChangeActiveFilter={vi.fn()}
             onRemoveActiveFilter={vi.fn()}
             onResetActiveFilters={vi.fn()}
@@ -75,6 +76,7 @@ describe('Filters component', () => {
           <Filters
             fields={fieldMocks}
             activeFilters={[activeFiltersMocks[0]]}
+            onSetActiveFilters={vi.fn()}
             onChangeActiveFilter={vi.fn()}
             onRemoveActiveFilter={vi.fn()}
             onResetActiveFilters={vi.fn()}
@@ -92,6 +94,7 @@ describe('Filters component', () => {
           <Filters
             fields={fieldMocks}
             activeFilters={activeFiltersMocks}
+            onSetActiveFilters={vi.fn()}
             onChangeActiveFilter={vi.fn()}
             onRemoveActiveFilter={vi.fn()}
             onResetActiveFilters={vi.fn()}
@@ -109,6 +112,7 @@ describe('Filters component', () => {
           <Filters
             fields={fieldMocks}
             activeFilters={[activeFiltersMocks[0]]}
+            onSetActiveFilters={vi.fn()}
             onChangeActiveFilter={vi.fn()}
             onRemoveActiveFilter={vi.fn()}
             onResetActiveFilters={vi.fn()}
@@ -127,6 +131,7 @@ describe('Filters component', () => {
           <Filters
             fields={fieldMocks}
             activeFilters={activeFiltersMocks}
+            onSetActiveFilters={vi.fn()}
             onChangeActiveFilter={vi.fn()}
             onRemoveActiveFilter={vi.fn()}
             onResetActiveFilters={vi.fn()}
@@ -145,6 +150,7 @@ describe('Filters component', () => {
       <Filters
         fields={fieldMocks}
         activeFilters={[]}
+        onSetActiveFilters={vi.fn()}
         onChangeActiveFilter={onChangeActiveFilterFn}
         onRemoveActiveFilter={vi.fn()}
         onResetActiveFilters={vi.fn()}
@@ -167,6 +173,7 @@ describe('Filters component', () => {
       <Filters
         fields={fieldMocks}
         activeFilters={[]}
+        onSetActiveFilters={vi.fn()}
         onChangeActiveFilter={onChangeActiveFilterFn}
         onRemoveActiveFilter={vi.fn()}
         onResetActiveFilters={vi.fn()}
@@ -200,6 +207,7 @@ describe('Filters component', () => {
       <Filters
         fields={fieldMocks}
         activeFilters={activeFiltersMocks}
+        onSetActiveFilters={vi.fn()}
         onChangeActiveFilter={vi.fn()}
         onRemoveActiveFilter={onRemoveActiveFilterFn}
         onResetActiveFilters={vi.fn()}
@@ -223,6 +231,7 @@ describe('Filters component', () => {
       <Filters
         fields={fieldMocks}
         activeFilters={activeFiltersMocks}
+        onSetActiveFilters={vi.fn()}
         onChangeActiveFilter={vi.fn()}
         onRemoveActiveFilter={vi.fn()}
         onResetActiveFilters={onResetActiveFilters}
