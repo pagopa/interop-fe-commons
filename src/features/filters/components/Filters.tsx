@@ -46,6 +46,9 @@ export const Filters: React.FC<FiltersProps> = ({
         filterKey,
         fieldValue.filter(({ value: v }) => v !== value)
       )
+    } else {
+      const defaultValues = getFiltersFieldsDefaultValue(fields, hasSubmitButton)
+      handleFieldsValuesChange(filterKey, defaultValues[filterKey])
     }
     onRemoveActiveFilter(type, filterKey, value)
   }
