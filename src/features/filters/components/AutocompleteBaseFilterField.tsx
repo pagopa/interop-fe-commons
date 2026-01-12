@@ -81,7 +81,9 @@ export const AutocompleteBaseFilterField = <Multiple extends boolean>(
             variant="outlined"
             {...params}
             label={getSelectedElementsLabelText().label}
-            aria-label={getSelectedElementsLabelText().ariaLabel}
+            aria-label={
+              props.hasSubmitButton ? getSelectedElementsLabelText().ariaLabel : undefined
+            }
           />
         )
       }}
