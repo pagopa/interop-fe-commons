@@ -37,8 +37,8 @@ export const Pagination: React.FC<PaginationProps> = ({
   ...stackProps
 }) => {
   const pageOptionsValues = rowPerPageOptions?.options || defaultOptions
+  const limit = rowPerPageOptions?.limit || pageOptionsValues[0]
 
-  if (totalPages <= 1) return null
   return (
     <Stack
       sx={{ mt: 2, ...sx }}
@@ -53,7 +53,7 @@ export const Pagination: React.FC<PaginationProps> = ({
           labelId="rows-per-page-select"
           id="rows-per-page-select"
           data-testid="rows-per-page-select"
-          value={rowPerPageOptions.limit}
+          value={limit}
           inputProps={{
             'aria-label': 'Select number of rows per page',
             ...rowPerPageOptions?.inputProps,
@@ -68,13 +68,15 @@ export const Pagination: React.FC<PaginationProps> = ({
         </Select>
       )}
 
-      <MUIPagination
-        sx={{ alignSelf: 'flex-end' }}
-        color="primary"
-        page={pageNum}
-        count={totalPages}
-        onChange={(_, page) => onPageChange(page)}
-      />
+      {totalPages > 1 && (
+        <MUIPagination
+          sx={{ alignSelf: 'flex-end' }}
+          color="primary"
+          page={pageNum}
+          count={totalPages}
+          onChange={(_, page) => onPageChange(page)}
+        />
+      )}
     </Stack>
   )
 }
