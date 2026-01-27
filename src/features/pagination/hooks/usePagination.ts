@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { z } from 'zod'
 
 const paramsSchema = z.coerce.number().int().positive()
-const limitSchema = paramsSchema.catch(10)
+const limitSchema = paramsSchema.max(50).catch(10)
 const offsetSchema = paramsSchema.catch(0)
 
 /**
@@ -29,7 +29,7 @@ export function usePagination(options?: { limit: number }) {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const offset = offsetSchema.parse(searchParams.get('offset'))
-  const limit = limitSchema.parse(options?.limit || searchParams.get('limit'))
+  const limit = limitSchema.parse(searchParams.get('limit') || options?.limit)
 
   const pageNum = Math.ceil(offset / limit) + 1
 
