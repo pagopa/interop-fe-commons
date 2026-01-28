@@ -90,9 +90,15 @@ export function usePagination(options?: { limit: number }) {
 
   const paginationParams = { limit, offset }
 
+  const rowPerPageOptions = {
+    limit,
+    onLimitChange: handleLimitChange,
+  }
+
   return {
     paginationParams,
     paginationProps,
+    rowPerPageOptions,
     getTotalPageCount,
   }
 }
