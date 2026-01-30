@@ -12,32 +12,30 @@ export function generateUseSwitchPathLang<T extends string>(config?: RoutesBuild
     const switchPathLang = React.useCallback(
       (toLang: T) => {
         const path = location.pathname
-        const firstBit = path.split('/')[1]
+        const segments = path.split('/')
+        const firstBit = segments[1]
+        const urlParams = new URLSearchParams(location.search)
 
         if (!languages) {
-          throw new Error(
-            'useSwitchPathLang requires languages to be defined in generateRoutes config'
-          )
+          throw new Error('useSwitchPathLang requires languages to be defined')
         }
 
-        if (!languages.includes(firstBit)) {
-          console.warn(`useSwitchPathLang: path "${path}" does not start with a language code.`)
-          return
-        }
+        urlParams.delete('lang')
 
-        let newPath = path.replace(`/${firstBit}/`, `/${toLang}/`)
+        const newPathname = path.replace(`/${firstBit}/`, `/${toLang}/`)
 
-        if (location.search) {
-          newPath += location.search
-        }
-
-        if (location.hash) {
-          newPath += location.hash
-        }
-
-        navigate(newPath, { replace: true })
+        const newSearch = urlParams.toString()
+        const searchPrefix = newSearch ? `?${newSearch}` : ''
+        navigate(
+          {
+            pathname: newPathname,
+            search: searchPrefix,
+            hash: location.hash,
+          },
+          { replace: true }
+        )
       },
-      [location.hash, location.search, location.pathname, navigate]
+      [location, navigate]
     )
 
     return switchPathLang
