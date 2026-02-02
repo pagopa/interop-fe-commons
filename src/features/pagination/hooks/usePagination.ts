@@ -5,7 +5,7 @@ import { z } from 'zod'
 const paramsSchema = z.coerce.number().int().positive()
 const limitSchema = paramsSchema.max(50).catch(10)
 const offsetSchema = paramsSchema.catch(0)
-
+const defaultOptions = [10, 24, 36]
 /**
  * @description
  * This hook is used to manage the pagination state keeping it in sync with the url params.
@@ -25,11 +25,12 @@ const offsetSchema = paramsSchema.catch(0)
  * )
  *
  */
-export function usePagination(options?: { limit: number }) {
+export function usePagination(options?: { limit: number; limitOptions?: number[] }) {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const offset = offsetSchema.parse(searchParams.get('offset'))
   const limit = limitSchema.parse(searchParams.get('limit') || options?.limit)
+  const limitOptions = options?.limitOptions || defaultOptions
 
   const pageNum = Math.ceil(offset / limit) + 1
 
@@ -92,6 +93,7 @@ export function usePagination(options?: { limit: number }) {
 
   const rowPerPageOptions = {
     limit,
+    options: limitOptions,
     onLimitChange: handleLimitChange,
   }
 
