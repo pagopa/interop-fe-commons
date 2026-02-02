@@ -42,6 +42,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   useEffect(() => {
     if (rowPerPageOptions) {
       if (!pageOptionsValues.includes(limit)) {
+        // If Limit is wrong and not included within pageOptsionValues, will be selected first element of select
         rowPerPageOptions.onLimitChange(pageOptionsValues[0])
       }
     }
