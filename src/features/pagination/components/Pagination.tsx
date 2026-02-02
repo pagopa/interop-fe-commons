@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import type { InputBaseComponentProps } from '@mui/material'
 import {
   MenuItem,
@@ -38,6 +38,15 @@ export const Pagination: React.FC<PaginationProps> = ({
 }) => {
   const pageOptionsValues = rowPerPageOptions?.options || defaultOptions
   const limit = rowPerPageOptions?.limit || pageOptionsValues[0]
+
+  useEffect(() => {
+    if (rowPerPageOptions) {
+      if (!pageOptionsValues.includes(limit)) {
+        // If Limit is wrong and not included within pageOptsionValues, will be selected first element of select
+        rowPerPageOptions.onLimitChange(pageOptionsValues[0])
+      }
+    }
+  }, [rowPerPageOptions, pageOptionsValues, limit])
 
   return (
     <Stack
