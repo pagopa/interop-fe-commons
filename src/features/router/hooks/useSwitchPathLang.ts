@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import type { RoutesBuilderConfig } from '../router.types'
 
 export function generateUseSwitchPathLang<T extends string>(config?: RoutesBuilderConfig) {
-  const languages = config?.languages
+  const configLanguages = config?.languages
 
   return function useSwitchPathLang() {
     const location = useLocation()
@@ -16,8 +16,15 @@ export function generateUseSwitchPathLang<T extends string>(config?: RoutesBuild
         const firstBit = segments[1]
         const urlParams = new URLSearchParams(location.search)
 
-        if (!languages) {
+        if (!configLanguages) {
           throw new Error('useSwitchPathLang requires languages to be defined')
+        }
+
+        if (!configLanguages.includes(firstBit)) {
+          console.warn(
+            `useSwitchPathLang: path "${path}" does not start with a language accepted from our initial configuration.`
+          )
+          return
         }
 
         urlParams.delete('lang')
