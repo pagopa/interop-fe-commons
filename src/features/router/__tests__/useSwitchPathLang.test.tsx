@@ -76,4 +76,12 @@ describe('useSwitchPathLang', () => {
     type LanguageParam = Parameters<ReturnType<typeof useLocalizedSwitchPathLang>>[0]
     expectTypeOf<LanguageParam>().toMatchTypeOf<(typeof languages)[number]>()
   })
+
+  it('should correctly switch lang if the path include "lang" param and remove it from pathname when switch is done', () => {
+    const { result, history } = renderLocalizedUseSwitchSwitchPathLang('/it/page-1?lang=en&test=1')
+    const switchPathLang = result.current
+    switchPathLang('en')
+    expect(history.location.pathname).toBe('/en/page-1')
+    expect(history.location.search).toBe('?test=1')
+  })
 })
