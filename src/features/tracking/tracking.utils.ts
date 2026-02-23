@@ -16,6 +16,7 @@ export function initOneTrust(oneTrustScriptUrl: string, domainScriptUrl: string,
 }
 
 export function mixpanelInit(mixpanelToken: string, mixpanelConfig?: Partial<Config>): void {
+  console.log('initializing mixPanel')
   mixpanel.init(mixpanelToken, {
     api_host: 'https://api-eu.mixpanel.com',
     persistence: 'localStorage',
@@ -34,13 +35,16 @@ export function mixpanelInit(mixpanelToken: string, mixpanelConfig?: Partial<Con
     ...mixpanelConfig,
   })
 
+  console.log('set identifier to distinct id:', mixpanel.get_distinct_id())
   mixpanel.identify(mixpanel.get_distinct_id())
 }
 
 export function areCookiesAccepted(): boolean {
-  return (
+  const areCookisesAccepted =
     typeof OnetrustActiveGroups !== 'undefined' &&
     Boolean(OnetrustActiveGroups) &&
     OnetrustActiveGroups.includes(TARG_COOKIES_GROUP)
-  )
+
+  console.log('areCookiesAccepted: ', areCookisesAccepted)
+  return areCookisesAccepted
 }
