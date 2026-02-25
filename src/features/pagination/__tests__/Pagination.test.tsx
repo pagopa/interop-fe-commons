@@ -49,7 +49,7 @@ describe('Pagination component', () => {
       expect(screen).toBeDefined()
     })
 
-    it('Should be available [10,24,36] as rows per page as default options', async () => {
+    it('Should be available [12,24,36] as rows per page as default options', async () => {
       const screen = render(<PaginationExample withRowsPerPage />)
       const selectElement = screen.getByTestId('rows-per-page-select')
       const selectButton = within(selectElement).getByRole('button')
@@ -61,7 +61,7 @@ describe('Pagination component', () => {
         const getOptions = screen.getAllByRole('option')
         expect(getOptions).toHaveLength(3)
 
-        expect(getOptions[0]).toHaveTextContent('10')
+        expect(getOptions[0]).toHaveTextContent('12')
         expect(getOptions[1]).toHaveTextContent('24')
         expect(getOptions[2]).toHaveTextContent('36')
       })
