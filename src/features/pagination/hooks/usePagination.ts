@@ -5,7 +5,7 @@ import { z } from 'zod'
 const paramsSchema = z.coerce.number().int().positive()
 const limitSchema = paramsSchema.max(50).catch(10)
 const offsetSchema = paramsSchema.catch(0)
-const defaultOptions = [10, 24, 36]
+const defaultOptions = [12, 24, 36]
 /**
  * @description
  * This hook is used to manage the pagination state keeping it in sync with the url params.
