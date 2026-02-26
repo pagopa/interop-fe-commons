@@ -1,11 +1,11 @@
 import React from 'react'
 import { render, waitFor, within } from '@testing-library/react'
-import { PaginationExample } from '../stories/PaginationExample'
+import { PaginationExample, PaginationExampleWithoutTotalPages } from '../stories/PaginationExample'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 
 describe('Pagination component', () => {
-  describe('Render pagination without rowsPerPage selector and with 100 as total elements', () => {
+  describe('Render pagination without rowsPerPage selector and with 120 as total elements', () => {
     it('Should render correctly', () => {
       const screen = render(<PaginationExample />)
       expect(screen).toBeDefined()
@@ -17,7 +17,7 @@ describe('Pagination component', () => {
       expect(selectElement).toBeNull()
     })
 
-    it('If total elements are 100 and default limit is 10, total pages should be 10', () => {
+    it('If total elements are 120 and default limit is 12, total pages should be 10', () => {
       const screen = render(<PaginationExample />)
       const paginationElement = screen.getByRole('navigation')
 
@@ -43,7 +43,7 @@ describe('Pagination component', () => {
     })
   })
 
-  describe('Render pagination with rowsPerPage selector enabled and with 100 as total elements', () => {
+  describe('Render pagination with rowsPerPage selector enabled and with 120 as total elements', () => {
     it('Should render correctly', () => {
       const screen = render(<PaginationExample withRowsPerPage />)
       expect(screen).toBeDefined()
@@ -66,5 +66,12 @@ describe('Pagination component', () => {
         expect(getOptions[2]).toHaveTextContent('36')
       })
     })
+  })
+
+  it('Should not render rows per page selector if total pages are 0', () => {
+    const screen = render(<PaginationExampleWithoutTotalPages />)
+    const selectElement = screen.queryByTestId('rows-per-page-select')
+
+    expect(selectElement).toBeNull()
   })
 })

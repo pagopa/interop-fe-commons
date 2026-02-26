@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { z } from 'zod'
 
 const paramsSchema = z.coerce.number().int().positive()
-const limitSchema = paramsSchema.max(50).catch(10)
+const limitSchema = paramsSchema.max(50).catch(12)
 const offsetSchema = paramsSchema.catch(0)
 const defaultOptions = [12, 24, 36]
 /**
