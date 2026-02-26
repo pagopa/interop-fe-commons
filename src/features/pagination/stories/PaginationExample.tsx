@@ -64,11 +64,14 @@ export const _PaginationExampleWithoutTotalPages: React.FC = () => {
   const { paginationParams, paginationProps, getTotalPageCount } = usePagination()
   const [debug, setDebug] = React.useState(false)
   const location = useLocation()
-  const totalPages = getTotalPageCount(100)
+  const totalPages = getTotalPageCount(0)
 
-  const { ...restPaginationProps } = paginationProps
+  const { onLimitChange, ...restPaginationProps } = paginationProps
 
-  const rowsPerPageProps = undefined
+  const rowsPerPageProps = {
+    onLimitChange: onLimitChange,
+    limit: paginationParams.limit,
+  }
 
   const urlSearchParams = new URLSearchParams(location.search)
   // Remove all params except offset
