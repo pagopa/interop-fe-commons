@@ -38,7 +38,6 @@ export const getFiltersFieldsInitialValues = (
   searchParams: URLSearchParams,
   filtersFields: FilterFields,
   hasSubmitButton?: boolean
-  // TODO inserire il parametro hasSubmitButton e nel caso ci sia popolare i valori iniziali dai search params e poi ricontrollare tutto
 ) => {
   const fieldsValues: FilterFieldsValues = {}
   filtersFields.forEach((field) => {

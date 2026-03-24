@@ -58,19 +58,19 @@ export const Filters: React.FC<FiltersProps> = ({
     onResetActiveFilters()
   }
 
-  const onSubmit = () => {
+  const handleSubmit = () => {
     onSetActiveFilters(fields, fieldsValues)
   }
 
   return (
-    <Stack direction="column" spacing={2} justifyContent="space-between" sx={{ mb: 4 }}>
+    <Stack direction="column" sx={{ justifyContent: 'space-between', py: 4 }}>
       <FiltersFields
         fields={fields}
         fieldsValues={fieldsValues}
         onFieldsValuesChange={handleFieldsValuesChange}
         onChangeActiveFilter={onChangeActiveFilter}
         onResetActiveFilters={handleResetActiveFilters}
-        onSubmit={onSubmit}
+        onSubmit={handleSubmit}
         hasSubmitButton={hasSubmitButton}
       />
       <ActiveFilterChips

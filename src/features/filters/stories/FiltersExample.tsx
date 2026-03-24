@@ -20,18 +20,18 @@ const _FiltersExample: React.FC = () => {
   const location = useLocation()
 
   const { filtersParams, ...handlers } = useFilters<EServiceListQueryFilters>([
-    { name: 'q', type: 'freetext', label: 'Find by name' },
+    { name: 'q', type: 'freetext', label: 'Nome' },
     {
       name: 'version',
       type: 'numeric',
-      label: 'Find by version number',
+      label: 'Cerca per versione',
       min: 10,
       max: 20,
     },
     {
       name: 'consumerId',
       type: 'autocomplete-multiple',
-      label: 'Find by consumer',
+      label: 'Cerca per consumatore',
       options: [
         { value: 'option-1', label: 'PagoPA S.p.A.' },
         { value: 'option-2', label: 'Agenzia delle Entrate' },
@@ -41,17 +41,17 @@ const _FiltersExample: React.FC = () => {
     {
       name: 'state',
       type: 'autocomplete-single',
-      label: 'Find by State',
+      label: 'Stato',
       options: [
-        { value: 'option-1', label: 'PagoPA S.p.A.' },
-        { value: 'option-2', label: 'Agenzia delle Entrate' },
+        { value: 'pagoPA', label: 'PagoPA S.p.A.' },
+        { value: 'agenziaEntrate', label: 'Agenzia delle Entrate' },
       ],
       onTextInputChange: setAutocompleteStateTextInput,
     },
     {
       name: 'createdAt',
       type: 'datepicker',
-      label: 'Find by creation date',
+      label: 'Data di creazione',
       minDate: new Date(),
       // Today plus 1 year
       maxDate: new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
@@ -70,7 +70,7 @@ const _FiltersExample: React.FC = () => {
 
   return (
     <>
-      <Filters {...handlers} />
+      <Filters {...handlers} hasSubmitButton />
       <Container sx={{ bgcolor: debug ? 'white' : 'initial', mt: 4, py: 4 }}>
         <Button variant="naked" onClick={() => setDebug(!debug)}>
           {debug ? 'Hide' : 'Show'} debug values

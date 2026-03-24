@@ -25,31 +25,27 @@ export const AutocompleteBaseFilterField = <Multiple extends boolean>(
   })
 
   function getSelectedElementsLabelText(): { label: string; ariaLabel: string } {
-    let label = props.label
-    let ariaLabel = props.label
-
-    if (props.hasSubmitButton && Array.isArray(props.value) && props.value.length >= 1) {
-      const selectedElements = props.value
-
-      label = getLocalizedValue({
-        it: `${props.label} (${selectedElements.length})`,
-        en: `${props.label} (${selectedElements.length})`,
-      })
-
-      if (props.value.length === 1) {
-        ariaLabel = getLocalizedValue({
-          it: `${props.label} (${selectedElements.length} elemento selezionato)`,
-          en: `${props.label} (${selectedElements.length} element selected)`,
-        })
-      }
-
-      if (props.value.length > 1) {
-        ariaLabel = getLocalizedValue({
-          it: `${props.label} (${selectedElements.length} elementi selezionati)`,
-          en: `${props.label} (${selectedElements.length} elements selected)`,
-        })
-      }
+    // If the filter has no submit button, or if it has a submit button but the value is empty, the label is just the field label
+    //  otherwise it shows the number of selected elements
+    if (!props.hasSubmitButton || !Array.isArray(props.value) || props.value.length === 0) {
+      return { label: props.label, ariaLabel: props.label }
     }
+
+    const elementNumber = props.value.length
+
+    const label = getLocalizedValue({
+      it: `${props.label} (${elementNumber})`,
+      en: `${props.label} (${elementNumber})`,
+    })
+
+    const ariaLabel = getLocalizedValue({
+      it: `${props.label} (${elementNumber} ${
+        elementNumber === 1 ? 'elemento selezionato' : 'elementi selezionati'
+      })`,
+      en: `${props.label} (${elementNumber} ${
+        elementNumber === 1 ? 'element' : 'elements'
+      } selected)`,
+    })
 
     return { label, ariaLabel }
   }

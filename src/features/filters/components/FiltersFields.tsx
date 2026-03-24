@@ -62,7 +62,7 @@ export const FiltersFields: React.FC<FiltersFieldsProps> = ({
           hasSubmitButton,
         }
         return (
-          <Grid item xs={field.width ?? filterFieldDefaultWidth} key={field.name}>
+          <Grid item xs={12} lg={field.width ?? filterFieldDefaultWidth} key={field.name}>
             {field.type === 'freetext' && <FreetextFilterField {...fieldProps} />}
             {field.type === 'numeric' && <NumericFilterField {...fieldProps} />}
             {field.type === 'autocomplete-multiple' && (
@@ -76,7 +76,7 @@ export const FiltersFields: React.FC<FiltersFieldsProps> = ({
         )
       })}
       {hasSubmitButton && (
-        <Grid item xs={3} alignContent="center">
+        <Grid item xs={12} lg={3} alignContent="center">
           <Button
             size="small"
             type="button"

@@ -6,6 +6,7 @@ import type {
   FiltersHandlers,
   FiltersParams,
   FiltersHandler,
+  FilterFieldType,
 } from '../filters.types'
 import { useSearchParams } from 'react-router-dom'
 import {
@@ -14,6 +15,50 @@ import {
   mapSearchParamsToActiveFiltersAndFilterParams,
   encodeSingleFilterFieldValue,
 } from '../filters.utils'
+
+type FilterValue = Parameters<FilterHandler>[2]
+
+function shouldRemoveFilter(type: FilterFieldType, value: FilterValue): boolean {
+  if ((type === 'datepicker' || type === 'autocomplete-single') && value === null) {
+    return true
+  }
+  if (
+    ['freetext', 'autocomplete-multiple', 'numeric'].includes(type) &&
+    (value as string | FilterOption[]).length === 0
+  ) {
+    return true
+  }
+  return false
+}
+
+function setFilterParam(
+  searchParams: URLSearchParams,
+  type: FilterFieldType,
+  filterKey: string,
+  value: FilterValue
+): void {
+  switch (type) {
+    case 'numeric':
+    case 'freetext': {
+      searchParams.set(filterKey, String(value))
+      break
+    }
+    case 'autocomplete-multiple': {
+      const encoded = encodeMultipleFilterFieldValue(value as FilterOption[])
+      searchParams.set(filterKey, encoded)
+      break
+    }
+    case 'autocomplete-single': {
+      const encoded = encodeSingleFilterFieldValue(value as FilterOption)
+      searchParams.set(filterKey, encoded)
+      break
+    }
+    case 'datepicker': {
+      searchParams.set(filterKey, (value as Date).toISOString())
+      break
+    }
+  }
+}
 
 /**
  * @description
@@ -71,41 +116,12 @@ export function useFilters<TFiltersParams extends FiltersParams>(
   const onChangeActiveFilter = React.useCallback<FilterHandler>(
     (type, filterKey, value) => {
       setSearchParams((searchParams) => {
-        let shouldBeRemoved = false
-        if (type === 'datepicker' && value === null) {
-          shouldBeRemoved = true
-        }
-        if (
-          ['freetext', 'autocomplete-multiple', 'numeric'].includes(type) &&
-          (value as string | Array<FilterOption>).length === 0
-        ) {
-          shouldBeRemoved = true
-        }
-        if (shouldBeRemoved) {
+        if (shouldRemoveFilter(type, value)) {
           searchParams.delete(filterKey)
-          return searchParams
+        } else {
+          setFilterParam(searchParams, type, filterKey, value)
+          searchParams.delete('offset')
         }
-
-        switch (type) {
-          case 'numeric':
-          case 'freetext':
-            searchParams.set(filterKey, String(value))
-            break
-          case 'autocomplete-multiple':
-            const urlParamMultipleFilterValue = encodeMultipleFilterFieldValue(
-              value as Array<FilterOption>
-            )
-            searchParams.set(filterKey, urlParamMultipleFilterValue)
-            break
-          case 'autocomplete-single':
-            const urlParamSingleFilterValue = encodeSingleFilterFieldValue(value as FilterOption)
-            searchParams.set(filterKey, urlParamSingleFilterValue)
-            break
-          case 'datepicker':
-            searchParams.set(filterKey, (value as Date).toISOString())
-            break
-        }
-        searchParams.delete('offset')
         return searchParams
       })
     },
@@ -114,59 +130,25 @@ export function useFilters<TFiltersParams extends FiltersParams>(
 
   const onSetActiveFilters = React.useCallback<FiltersHandler>(
     (fields, fieldsValues) => {
-      // fields.forEach((field) => {
-      //   onChangeActiveFilter(field.type, field.name, fieldsValues[field.name])
-      // })
       setSearchParams((searchParams) => {
-        console.log('Setting active filters...', searchParams.toString())
-        console.log('Fields values:', fieldsValues)
-        fields.forEach((field) => {
-          const value = fieldsValues[field.name]
-          const type = field.type
-          const filterKey = field.name
-          console.log('data', filterKey, type, value)
-          let shouldBeRemoved = false
-          if ((type === 'datepicker' || type === 'autocomplete-single') && value === null) {
-            shouldBeRemoved = true
-          }
-          if (
-            ['freetext', 'autocomplete-multiple', 'numeric'].includes(type) &&
-            (value as string | Array<FilterOption>).length === 0
-          ) {
-            shouldBeRemoved = true
-          }
-          if (shouldBeRemoved) {
-            searchParams.delete(filterKey)
-          }
+        let hasChanges = false
 
-          if (!shouldBeRemoved) {
-            console.log('Setting param:', shouldBeRemoved, filterKey, value)
-            switch (type) {
-              case 'numeric':
-              case 'freetext':
-                searchParams.set(filterKey, String(value))
-                break
-              case 'autocomplete-multiple':
-                const urlParamMultipleFilterValue = encodeMultipleFilterFieldValue(
-                  value as Array<FilterOption>
-                )
-                searchParams.set(filterKey, urlParamMultipleFilterValue)
-                break
-              case 'autocomplete-single':
-                const urlParamSingleFilterValue = encodeSingleFilterFieldValue(
-                  value as FilterOption
-                )
-                searchParams.set(filterKey, urlParamSingleFilterValue)
-                break
-              case 'datepicker':
-                searchParams.set(filterKey, (value as Date).toISOString())
-                break
-            }
-            searchParams.delete('offset')
-            console.log('Updated search params:', searchParams.toString())
+        fields.forEach((field) => {
+          const { type, name: filterKey } = field
+          const value = fieldsValues[filterKey]
+
+          if (shouldRemoveFilter(type, value)) {
+            searchParams.delete(filterKey)
+          } else {
+            setFilterParam(searchParams, type, filterKey, value)
+            hasChanges = true
           }
         })
-        console.log('Final search params after setting active filters:', searchParams.toString())
+
+        if (hasChanges) {
+          searchParams.delete('offset')
+        }
+
         return searchParams
       })
     },
