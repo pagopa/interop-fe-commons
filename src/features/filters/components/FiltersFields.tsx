@@ -76,7 +76,7 @@ export const FiltersFields: React.FC<FiltersFieldsProps> = ({
         )
       })}
       {hasSubmitButton && (
-        <Grid item xs={12} lg={3} alignContent="center">
+        <Grid item xs={12} lg={2} alignContent="center">
           <Button
             size="small"
             type="button"

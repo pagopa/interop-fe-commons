@@ -378,7 +378,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
     </div>
   </div>
   <hr
-    className="MuiDivider-root MuiDivider-fullWidth css-1b008ma-MuiDivider-root"
+    className="MuiDivider-root MuiDivider-fullWidth css-ctpjxq-MuiDivider-root"
   />
   <div
     className="MuiStack-root css-1jv2z0n-MuiStack-root"
@@ -895,7 +895,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
     </div>
   </div>
   <hr
-    className="MuiDivider-root MuiDivider-fullWidth css-1b008ma-MuiDivider-root"
+    className="MuiDivider-root MuiDivider-fullWidth css-ctpjxq-MuiDivider-root"
   />
   <div
     className="MuiStack-root css-1a41st4-MuiStack-root"
@@ -1421,7 +1421,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
     </div>
   </div>
   <hr
-    className="MuiDivider-root MuiDivider-fullWidth css-1b008ma-MuiDivider-root"
+    className="MuiDivider-root MuiDivider-fullWidth css-ctpjxq-MuiDivider-root"
   />
   <div
     className="MuiStack-root css-1jv2z0n-MuiStack-root"
@@ -1853,7 +1853,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
     </div>
   </div>
   <hr
-    className="MuiDivider-root MuiDivider-fullWidth css-1b008ma-MuiDivider-root"
+    className="MuiDivider-root MuiDivider-fullWidth css-ctpjxq-MuiDivider-root"
   />
   <div
     className="MuiStack-root css-1a41st4-MuiStack-root"

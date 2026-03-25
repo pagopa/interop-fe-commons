@@ -37,7 +37,7 @@ export const ActiveFilterChips: React.FC<ActiveFilterChipsProps> = ({
 
   return (
     <>
-      <Divider sx={{ my: 1 }} />
+      <Divider sx={{ my: 2 }} />
 
       <Stack
         spacing={rightContent ? 2 : 0}
