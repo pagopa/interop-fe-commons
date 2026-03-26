@@ -57,8 +57,6 @@ describe('Pagination component', () => {
       await userEvent.click(selectButton)
 
       await waitFor(() => {
-        // screen.debug()
-
         const getOptions = screen.getAllByRole('option')
         expect(getOptions).toHaveLength(3)
 

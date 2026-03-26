@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Chip, Divider, Stack } from '@mui/material'
 import type { ActiveFilters, FilterHandler } from '../filters.types'
 import { getLocalizedValue } from '../../../utils/common.utils'
+import { blue } from '@mui/material/colors'
 
 type ActiveFilterChipsProps = {
   activeFilters: ActiveFilters
@@ -13,9 +14,8 @@ type ActiveFilterChipsProps = {
 
 const chipFocusStyles = {
   '&.Mui-focusVisible': {
-    boxShadow: '0px 0px 8px 2px rgba(25, 118, 210, 0.3)',
-    transform: 'scale(1.05)',
-    transition: 'transform 0.2s ease-in-out',
+    outline: `2px solid ${blue[400]}`,
+    outlineOffset: '1px',
   },
 }
 

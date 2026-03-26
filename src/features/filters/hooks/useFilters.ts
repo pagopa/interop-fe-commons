@@ -131,8 +131,6 @@ export function useFilters<TFiltersParams extends FiltersParams>(
   const onSetActiveFilters = React.useCallback<FiltersHandler>(
     (fields, fieldsValues) => {
       setSearchParams((searchParams) => {
-        let hasChanges = false
-
         fields.forEach((field) => {
           const { type, name: filterKey } = field
           const value = fieldsValues[filterKey]
@@ -141,14 +139,10 @@ export function useFilters<TFiltersParams extends FiltersParams>(
             searchParams.delete(filterKey)
           } else {
             setFilterParam(searchParams, type, filterKey, value)
-            hasChanges = true
           }
         })
 
-        if (hasChanges) {
-          searchParams.delete('offset')
-        }
-
+        searchParams.delete('offset')
         return searchParams
       })
     },

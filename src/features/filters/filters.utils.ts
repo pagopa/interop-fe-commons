@@ -8,23 +8,20 @@ import type {
 } from './filters.types'
 
 /** Map passed fields options to the field state default value */
-export function getFiltersFieldsDefaultValue(
-  fields: FilterFields,
-  hasSubmitButton?: boolean
-): FilterFieldsValues {
-  return fields.reduce((prev, field) => {
-    if (field.type === 'autocomplete-multiple') {
-      return { ...prev, [field.name]: [] }
+export function getFiltersFieldsDefaultValue(fields: FilterFields): FilterFieldsValues {
+  return fields.reduce<FilterFieldsValues>((acc, field) => {
+    switch (field.type) {
+      case 'autocomplete-multiple':
+        acc[field.name] = []
+        break
+      case 'autocomplete-single':
+      case 'datepicker':
+        acc[field.name] = null
+        break
+      default:
+        acc[field.name] = ''
     }
-    if (field.type === 'autocomplete-single') {
-      if (hasSubmitButton) return { ...prev, [field.name]: null }
-      // autocomplete single has no need to be in the fields state when no submit button
-      return prev
-    }
-    if (field.type === 'datepicker') {
-      return { ...prev, [field.name]: null }
-    }
-    return { ...prev, [field.name]: '' }
+    return acc
   }, {})
 }
 
