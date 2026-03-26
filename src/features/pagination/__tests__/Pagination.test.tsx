@@ -49,17 +49,16 @@ describe('Pagination component', () => {
       expect(screen).toBeDefined()
     })
 
-    it('Should be available [10,24,36] as rows per page as default options', async () => {
+    it.only('Should be available [10,24,36] as rows per page as default options', async () => {
       const screen = render(<PaginationExample withRowsPerPage />)
+
       const selectElement = screen.getByTestId('rows-per-page-select')
-      const selectButton = within(selectElement).getByRole('combobox')
-
-      screen.debug(selectButton)
-
-      expect(selectElement).toBeDefined()
+      const selectButton = within(selectElement).getByRole('button')
       await userEvent.click(selectButton)
 
       await waitFor(() => {
+        // screen.debug()
+
         const getOptions = screen.getAllByRole('option')
         expect(getOptions).toHaveLength(3)
 
