@@ -206,13 +206,11 @@ describe('Filters component', () => {
       />
     )
 
+    // Multi-select filters are represented by the count chip inside the input,
+    // so only non-multi-select active filters produce removable chips in the summary row.
     const activeFilterChip = screen.getAllByTestId('CancelIcon')[0]
     fireEvent.click(activeFilterChip)
-    expect(onRemoveActiveFilterFn).toBeCalledWith(
-      'autocomplete-multiple',
-      'multiple-field',
-      'option-1'
-    )
+    expect(onRemoveActiveFilterFn).toBeCalledWith('freetext', 'single-field', 'test-value')
   })
 
   it('should clear filters on remove filters button click', async () => {

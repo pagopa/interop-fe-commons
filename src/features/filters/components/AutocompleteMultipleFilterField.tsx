@@ -1,5 +1,6 @@
 import React from 'react'
-import { Checkbox } from '@mui/material'
+import { Checkbox, Chip } from '@mui/material'
+import CloseIcon from '@mui/icons-material/Close'
 import type {
   AutocompleteFilterFieldOptions,
   FilterFieldCommonProps,
@@ -16,10 +17,11 @@ export const AutocompleteMultipleFilterField: React.FC<FilterFieldCommonProps> =
 }) => {
   const field = _field as AutocompleteFilterFieldOptions
   const filterKey = field.name
+  const selected = (value as FilterOption[]) ?? []
 
   const debounceRef = React.useRef<NodeJS.Timeout>()
 
-  const handleAutocompleteMultipleChange = (data: FilterFieldsValues['string']) => {
+  const commit = (data: FilterFieldsValues['string']) => {
     onFieldsValuesChange(filterKey, data)
     clearTimeout(debounceRef.current)
     debounceRef.current = setTimeout(
@@ -28,24 +30,39 @@ export const AutocompleteMultipleFilterField: React.FC<FilterFieldCommonProps> =
     )
   }
 
+  const countChip =
+    selected.length > 0 ? (
+      <Chip
+        size="small"
+        color="primary"
+        label={selected.length}
+        onDelete={(e) => {
+          e.stopPropagation()
+          commit([])
+        }}
+        deleteIcon={<CloseIcon />}
+      />
+    ) : null
+
   return (
     <AutocompleteBaseFilterField<true>
       multiple
       label={field.label}
-      value={value as FilterOption[]}
+      value={selected}
       options={field.options}
       disableCloseOnSelect
+      endAdornmentExtra={countChip}
       onInputChange={field?.onTextInputChange}
       onChange={(_, data) => {
-        handleAutocompleteMultipleChange(data)
+        commit(data)
       }}
-      renderOption={(props, option, { selected }) => {
+      renderOption={(props, option, { selected: isSelected }) => {
         const label = option.label
         if (!label) return null
 
         return (
           <li {...props}>
-            <Checkbox key={option.value} checked={selected} name={label} />
+            <Checkbox key={option.value} checked={isSelected} name={label} />
             {label}
           </li>
         )
