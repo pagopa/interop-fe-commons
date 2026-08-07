@@ -1,6 +1,6 @@
 import React from 'react'
 import type { AutocompleteProps } from '@mui/material'
-import { Autocomplete, Paper, TextField } from '@mui/material'
+import { Autocomplete, Paper, Stack, TextField } from '@mui/material'
 import { getLocalizedValue } from '../../../utils/common.utils'
 import type { FilterOption } from '../filters.types'
 
@@ -14,7 +14,15 @@ type AutocompleteBaseFilterFieldProps<Multiple extends boolean> = Omit<
   | 'size'
   | 'renderInput'
   | 'onInputChange'
-> & { label: string; onInputChange?: (value: string) => void }
+> & {
+  label: string
+  onInputChange?: (value: string) => void
+  /**
+   * Optional content prepended to the input's endAdornment (before the dropdown arrow).
+   * Used by `AutocompleteMultipleFilterField` to render the count chip in `count-chip` variant.
+   */
+  endAdornmentExtra?: React.ReactNode
+}
 
 export const AutocompleteBaseFilterField = <Multiple extends boolean>(
   props: AutocompleteBaseFilterFieldProps<Multiple>
@@ -24,9 +32,11 @@ export const AutocompleteBaseFilterField = <Multiple extends boolean>(
     en: 'No results',
   })
 
+  const { endAdornmentExtra: _endAdornmentExtra, ...autocompleteProps } = props
+
   return (
     <Autocomplete<FilterOption, Multiple, true, false>
-      {...props}
+      {...autocompleteProps}
       onInputChange={(_, value) => props?.onInputChange?.(value)}
       isOptionEqualToValue={(option, { value }) => option.value === value}
       noOptionsText={noOptionsText}
@@ -46,7 +56,22 @@ export const AutocompleteBaseFilterField = <Multiple extends boolean>(
         props.onChange?.(event, data, reason)
       }}
       renderInput={(params) => {
-        return <TextField variant="outlined" {...params} label={props.label} />
+        const endAdornment = props.endAdornmentExtra ? (
+          <Stack direction="row" alignItems="center" spacing={0.5}>
+            {props.endAdornmentExtra}
+            {params.InputProps.endAdornment}
+          </Stack>
+        ) : (
+          params.InputProps.endAdornment
+        )
+        return (
+          <TextField
+            variant="outlined"
+            {...params}
+            label={props.label}
+            InputProps={{ ...params.InputProps, endAdornment }}
+          />
+        )
       }}
     />
   )

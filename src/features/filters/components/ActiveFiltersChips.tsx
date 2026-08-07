@@ -16,7 +16,9 @@ export const ActiveFilterChips: React.FC<ActiveFilterChips> = ({
   onResetActiveFilters,
   rightContent,
 }) => {
-  if (activeFilters.length <= 0 && !rightContent) return null
+  const visibleFilters = activeFilters.filter(({ type }) => type !== 'autocomplete-multiple')
+
+  if (visibleFilters.length <= 0 && !rightContent) return null
 
   const cancelFiltersLabel = getLocalizedValue({
     it: 'Annulla filtri',
@@ -34,7 +36,7 @@ export const ActiveFilterChips: React.FC<ActiveFilterChips> = ({
         justifyContent="space-between"
       >
         <Stack direction="row" flexWrap="wrap" gap={1} alignItems="center" sx={{ width: '100%' }}>
-          {activeFilters.map(({ value, label, type, filterKey }) => (
+          {visibleFilters.map(({ value, label, type, filterKey }) => (
             <Chip
               key={value}
               label={label}
