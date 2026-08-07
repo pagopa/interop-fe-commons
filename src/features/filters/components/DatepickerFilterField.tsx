@@ -15,6 +15,7 @@ export const DatepickerFilterField: React.FC<FilterFieldCommonProps> = ({
   value,
   onChangeActiveFilter,
   onFieldsValuesChange,
+  hasSubmitButton,
 }) => {
   const field = _field as DatepickerFilterFieldOptions
   const filterKey = field.name
@@ -54,18 +55,23 @@ export const DatepickerFilterField: React.FC<FilterFieldCommonProps> = ({
           inputAdornment: (inputAdornmentProps) => (
             <>
               <InputAdornment {...inputAdornmentProps} />
-              <IconButton
-                onClick={enableDatepickerFilter}
-                disabled={!value}
-                sx={{ mr: -1.5, ml: 1 }}
-              >
-                <SearchIcon aria-label={searchIconAriaLabel} />
-              </IconButton>
+              {!hasSubmitButton && (
+                <IconButton
+                  onClick={enableDatepickerFilter}
+                  disabled={!value}
+                  sx={{ mr: -1.5, ml: 1 }}
+                >
+                  <SearchIcon aria-label={searchIconAriaLabel} />
+                </IconButton>
+              )}
             </>
           ),
         }}
         slotProps={{
-          textField: { size: 'small', onKeyDown: handleDatepickerKeyDown },
+          textField: {
+            size: 'small',
+            onKeyDown: hasSubmitButton ? undefined : handleDatepickerKeyDown,
+          },
         }}
       />
     </LocalizationProvider>

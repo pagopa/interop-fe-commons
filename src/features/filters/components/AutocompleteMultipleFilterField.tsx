@@ -13,6 +13,7 @@ export const AutocompleteMultipleFilterField: React.FC<FilterFieldCommonProps> =
   value,
   onChangeActiveFilter,
   onFieldsValuesChange,
+  hasSubmitButton,
 }) => {
   const field = _field as AutocompleteFilterFieldOptions
   const filterKey = field.name
@@ -21,11 +22,13 @@ export const AutocompleteMultipleFilterField: React.FC<FilterFieldCommonProps> =
 
   const handleAutocompleteMultipleChange = (data: FilterFieldsValues['string']) => {
     onFieldsValuesChange(filterKey, data)
-    clearTimeout(debounceRef.current)
-    debounceRef.current = setTimeout(
-      () => onChangeActiveFilter('autocomplete-multiple', filterKey, data),
-      300
-    )
+    if (!hasSubmitButton) {
+      clearTimeout(debounceRef.current)
+      debounceRef.current = setTimeout(
+        () => onChangeActiveFilter('autocomplete-multiple', filterKey, data),
+        300
+      )
+    }
   }
 
   return (
@@ -50,6 +53,7 @@ export const AutocompleteMultipleFilterField: React.FC<FilterFieldCommonProps> =
           </li>
         )
       }}
+      hasSubmitButton={hasSubmitButton}
     />
   )
 }

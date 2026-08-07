@@ -2,9 +2,11 @@ import React from 'react'
 import type {
   FilterFields,
   FilterOption,
-  FiltersHandler,
+  FilterHandler,
   FiltersHandlers,
   FiltersParams,
+  FiltersHandler,
+  FilterFieldType,
 } from '../filters.types'
 import { useSearchParams } from 'react-router-dom'
 import {
@@ -13,6 +15,50 @@ import {
   mapSearchParamsToActiveFiltersAndFilterParams,
   encodeSingleFilterFieldValue,
 } from '../filters.utils'
+
+type FilterValue = Parameters<FilterHandler>[2]
+
+function shouldRemoveFilter(type: FilterFieldType, value: FilterValue): boolean {
+  if ((type === 'datepicker' || type === 'autocomplete-single') && value === null) {
+    return true
+  }
+  if (
+    ['freetext', 'autocomplete-multiple', 'numeric'].includes(type) &&
+    (value as string | FilterOption[]).length === 0
+  ) {
+    return true
+  }
+  return false
+}
+
+function setFilterParam(
+  searchParams: URLSearchParams,
+  type: FilterFieldType,
+  filterKey: string,
+  value: FilterValue
+): void {
+  switch (type) {
+    case 'numeric':
+    case 'freetext': {
+      searchParams.set(filterKey, String(value))
+      break
+    }
+    case 'autocomplete-multiple': {
+      const encoded = encodeMultipleFilterFieldValue(value as FilterOption[])
+      searchParams.set(filterKey, encoded)
+      break
+    }
+    case 'autocomplete-single': {
+      const encoded = encodeSingleFilterFieldValue(value as FilterOption)
+      searchParams.set(filterKey, encoded)
+      break
+    }
+    case 'datepicker': {
+      searchParams.set(filterKey, (value as Date).toISOString())
+      break
+    }
+  }
+}
 
 /**
  * @description
@@ -67,43 +113,35 @@ export function useFilters<TFiltersParams extends FiltersParams>(
 ): FiltersHandlers & { filtersParams: TFiltersParams } {
   const [searchParams, setSearchParams] = useSearchParams()
 
-  const onChangeActiveFilter = React.useCallback<FiltersHandler>(
+  const onChangeActiveFilter = React.useCallback<FilterHandler>(
     (type, filterKey, value) => {
       setSearchParams((searchParams) => {
-        let shouldBeRemoved = false
-        if (type === 'datepicker' && value === null) {
-          shouldBeRemoved = true
-        }
-        if (
-          ['freetext', 'autocomplete-multiple', 'numeric'].includes(type) &&
-          (value as string | Array<FilterOption>).length === 0
-        ) {
-          shouldBeRemoved = true
-        }
-        if (shouldBeRemoved) {
+        if (shouldRemoveFilter(type, value)) {
           searchParams.delete(filterKey)
-          return searchParams
+        } else {
+          setFilterParam(searchParams, type, filterKey, value)
+          searchParams.delete('offset')
         }
+        return searchParams
+      })
+    },
+    [setSearchParams]
+  )
 
-        switch (type) {
-          case 'numeric':
-          case 'freetext':
-            searchParams.set(filterKey, String(value))
-            break
-          case 'autocomplete-multiple':
-            const urlParamMultipleFilterValue = encodeMultipleFilterFieldValue(
-              value as Array<FilterOption>
-            )
-            searchParams.set(filterKey, urlParamMultipleFilterValue)
-            break
-          case 'autocomplete-single':
-            const urlParamSingleFilterValue = encodeSingleFilterFieldValue(value as FilterOption)
-            searchParams.set(filterKey, urlParamSingleFilterValue)
-            break
-          case 'datepicker':
-            searchParams.set(filterKey, (value as Date).toISOString())
-            break
-        }
+  const onSetActiveFilters = React.useCallback<FiltersHandler>(
+    (fields, fieldsValues) => {
+      setSearchParams((searchParams) => {
+        fields.forEach((field) => {
+          const { type, name: filterKey } = field
+          const value = fieldsValues[filterKey]
+
+          if (shouldRemoveFilter(type, value)) {
+            searchParams.delete(filterKey)
+          } else {
+            setFilterParam(searchParams, type, filterKey, value)
+          }
+        })
+
         searchParams.delete('offset')
         return searchParams
       })
@@ -111,7 +149,7 @@ export function useFilters<TFiltersParams extends FiltersParams>(
     [setSearchParams]
   )
 
-  const onRemoveActiveFilter = React.useCallback<FiltersHandler>(
+  const onRemoveActiveFilter = React.useCallback<FilterHandler>(
     (type, filterKey, value) => {
       setSearchParams((searchParams) => {
         switch (type) {
@@ -167,5 +205,6 @@ export function useFilters<TFiltersParams extends FiltersParams>(
     onResetActiveFilters,
     onChangeActiveFilter,
     onRemoveActiveFilter,
+    onSetActiveFilters,
   }
 }

@@ -2,13 +2,13 @@
 
 exports[`Filters component > matches the snapshot with more than one active filters 1`] = `
 <div
-  className="MuiStack-root css-1obrysa-MuiStack-root"
+  className="MuiStack-root css-knfboc-MuiStack-root"
 >
   <div
     className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
   >
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
@@ -89,7 +89,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
@@ -175,7 +175,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         aria-owns={null}
@@ -276,7 +276,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         aria-owns={null}
@@ -378,7 +378,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
     </div>
   </div>
   <hr
-    className="MuiDivider-root MuiDivider-fullWidth css-1b008ma-MuiDivider-root"
+    className="MuiDivider-root MuiDivider-fullWidth css-ctpjxq-MuiDivider-root"
   />
   <div
     className="MuiStack-root css-1jv2z0n-MuiStack-root"
@@ -387,7 +387,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
       className="MuiStack-root css-1xvxq01-MuiStack-root"
     >
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-6yf97z-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -422,7 +422,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         </svg>
       </div>
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-6yf97z-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -457,7 +457,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         </svg>
       </div>
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-6yf97z-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -491,31 +491,27 @@ exports[`Filters component > matches the snapshot with more than one active filt
           />
         </svg>
       </div>
-      <div
-        className="MuiStack-root css-omazcq-MuiStack-root"
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall css-wrzsdx-MuiButtonBase-root-MuiButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
       >
-        <button
-          className="MuiButtonBase-root MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall css-wrzsdx-MuiButtonBase-root-MuiButton-root"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          Annulla filtri
-        </button>
-      </div>
+        Annulla filtri
+      </button>
     </div>
   </div>
 </div>
@@ -523,13 +519,13 @@ exports[`Filters component > matches the snapshot with more than one active filt
 
 exports[`Filters component > matches the snapshot with more than one active filters and right content 1`] = `
 <div
-  className="MuiStack-root css-1obrysa-MuiStack-root"
+  className="MuiStack-root css-knfboc-MuiStack-root"
 >
   <div
     className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
   >
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
@@ -610,7 +606,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
@@ -696,7 +692,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         aria-owns={null}
@@ -797,7 +793,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         aria-owns={null}
@@ -899,7 +895,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
     </div>
   </div>
   <hr
-    className="MuiDivider-root MuiDivider-fullWidth css-1b008ma-MuiDivider-root"
+    className="MuiDivider-root MuiDivider-fullWidth css-ctpjxq-MuiDivider-root"
   />
   <div
     className="MuiStack-root css-1a41st4-MuiStack-root"
@@ -908,7 +904,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
       className="MuiStack-root css-1xvxq01-MuiStack-root"
     >
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-6yf97z-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -943,7 +939,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         </svg>
       </div>
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-6yf97z-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -978,7 +974,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         </svg>
       </div>
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-6yf97z-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -1012,31 +1008,27 @@ exports[`Filters component > matches the snapshot with more than one active filt
           />
         </svg>
       </div>
-      <div
-        className="MuiStack-root css-omazcq-MuiStack-root"
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall css-wrzsdx-MuiButtonBase-root-MuiButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
       >
-        <button
-          className="MuiButtonBase-root MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall css-wrzsdx-MuiButtonBase-root-MuiButton-root"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          Annulla filtri
-        </button>
-      </div>
+        Annulla filtri
+      </button>
     </div>
     <div>
       Right Content
@@ -1047,13 +1039,13 @@ exports[`Filters component > matches the snapshot with more than one active filt
 
 exports[`Filters component > matches the snapshot with one active filter 1`] = `
 <div
-  className="MuiStack-root css-1obrysa-MuiStack-root"
+  className="MuiStack-root css-knfboc-MuiStack-root"
 >
   <div
     className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
   >
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
@@ -1134,7 +1126,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
@@ -1220,7 +1212,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         aria-owns={null}
@@ -1324,7 +1316,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         aria-owns={null}
@@ -1429,7 +1421,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
     </div>
   </div>
   <hr
-    className="MuiDivider-root MuiDivider-fullWidth css-1b008ma-MuiDivider-root"
+    className="MuiDivider-root MuiDivider-fullWidth css-ctpjxq-MuiDivider-root"
   />
   <div
     className="MuiStack-root css-1jv2z0n-MuiStack-root"
@@ -1438,7 +1430,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
       className="MuiStack-root css-1xvxq01-MuiStack-root"
     >
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-6yf97z-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -1479,13 +1471,13 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
 
 exports[`Filters component > matches the snapshot with one active filter and a right content 1`] = `
 <div
-  className="MuiStack-root css-1obrysa-MuiStack-root"
+  className="MuiStack-root css-knfboc-MuiStack-root"
 >
   <div
     className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
   >
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
@@ -1566,7 +1558,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
@@ -1652,7 +1644,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         aria-owns={null}
@@ -1756,7 +1748,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         aria-owns={null}
@@ -1861,7 +1853,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
     </div>
   </div>
   <hr
-    className="MuiDivider-root MuiDivider-fullWidth css-1b008ma-MuiDivider-root"
+    className="MuiDivider-root MuiDivider-fullWidth css-ctpjxq-MuiDivider-root"
   />
   <div
     className="MuiStack-root css-1a41st4-MuiStack-root"
@@ -1870,7 +1862,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
       className="MuiStack-root css-1xvxq01-MuiStack-root"
     >
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-6yf97z-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -1914,13 +1906,13 @@ exports[`Filters component > matches the snapshot with one active filter and a r
 
 exports[`Filters component > matches the snapshot without active filters 1`] = `
 <div
-  className="MuiStack-root css-1obrysa-MuiStack-root"
+  className="MuiStack-root css-knfboc-MuiStack-root"
 >
   <div
     className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
   >
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
@@ -2001,7 +1993,7 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
@@ -2087,7 +2079,7 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         aria-owns={null}
@@ -2188,7 +2180,7 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-3 css-1ozs4dl-MuiGrid-root"
     >
       <div
         aria-owns={null}

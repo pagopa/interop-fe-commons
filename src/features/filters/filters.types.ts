@@ -12,9 +12,10 @@ export type FiltersParams = Record<string, string | string[] | boolean>
 export type FiltersHandlers = {
   fields: FilterFields
   activeFilters: ActiveFilters
-  onChangeActiveFilter: FiltersHandler
-  onRemoveActiveFilter: FiltersHandler
+  onChangeActiveFilter: FilterHandler
+  onRemoveActiveFilter: FilterHandler
   onResetActiveFilters: VoidFunction
+  onSetActiveFilters: FiltersHandler
 }
 
 type FilterFieldCommon<TName extends string = string> = {
@@ -27,6 +28,10 @@ type FilterFieldCommon<TName extends string = string> = {
    * The label of the filter field.
    */
   label: string
+  /**
+   * The width of the filter field in a 12-column grid system.
+   */
+  width?: number
 }
 
 export type FreetextFilterFieldOptions<TName extends string = string> = FilterFieldCommon<TName> & {
@@ -82,16 +87,19 @@ export type FilterField<TName extends string = string> =
 export type FilterFieldCommonProps = {
   field: FilterField
   value: FilterFieldValue
-  onChangeActiveFilter: FiltersHandler
+  onChangeActiveFilter: FilterHandler
   onFieldsValuesChange: (name: string, value: FilterFieldValue) => void
+  hasSubmitButton?: boolean
 }
 
 export type FilterFields<TName extends string = string> = FilterField<TName>[]
 
 export type FilterOption = { label: string; value: string }
 
-export type FiltersHandler = (
+export type FilterHandler = (
   type: FilterFieldType,
   filterKey: string,
   value: FilterFieldValue
 ) => void
+
+export type FiltersHandler = (fields: FilterFields, fieldsValues: FilterFieldsValues) => void

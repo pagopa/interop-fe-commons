@@ -9,18 +9,19 @@ import type {
 
 /** Map passed fields options to the field state default value */
 export function getFiltersFieldsDefaultValue(fields: FilterFields): FilterFieldsValues {
-  return fields.reduce((prev, field) => {
-    if (field.type === 'autocomplete-multiple') {
-      return { ...prev, [field.name]: [] }
+  return fields.reduce<FilterFieldsValues>((acc, field) => {
+    switch (field.type) {
+      case 'autocomplete-multiple':
+        acc[field.name] = []
+        break
+      case 'autocomplete-single':
+      case 'datepicker':
+        acc[field.name] = null
+        break
+      default:
+        acc[field.name] = ''
     }
-    if (field.type === 'autocomplete-single') {
-      // autocomplete single has no need to be in the fields state
-      return prev
-    }
-    if (field.type === 'datepicker') {
-      return { ...prev, [field.name]: null }
-    }
-    return { ...prev, [field.name]: '' }
+    return acc
   }, {})
 }
 
@@ -32,7 +33,8 @@ export function getFiltersFieldsDefaultValue(fields: FilterFields): FilterFields
  */
 export const getFiltersFieldsInitialValues = (
   searchParams: URLSearchParams,
-  filtersFields: FilterFields
+  filtersFields: FilterFields,
+  hasSubmitButton?: boolean
 ) => {
   const fieldsValues: FilterFieldsValues = {}
   filtersFields.forEach((field) => {
@@ -46,7 +48,15 @@ export const getFiltersFieldsInitialValues = (
         fieldsValues[field.name] = []
         break
       case 'autocomplete-single':
-        // autocomplete single has no need to be in the fields state
+        // autocomplete single has no need to be in the fields state when no submit button
+        if (hasSubmitButton) {
+          const singleFilterParamValue = searchParams.get(field.name)
+          if (singleFilterParamValue) {
+            fieldsValues[field.name] = decodeSingleFilterFieldValue(singleFilterParamValue)
+            return
+          }
+          fieldsValues[field.name] = null
+        }
         break
       case 'freetext':
       case 'numeric':

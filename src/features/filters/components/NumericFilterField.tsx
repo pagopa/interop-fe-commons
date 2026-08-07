@@ -9,6 +9,7 @@ export const NumericFilterField: React.FC<FilterFieldCommonProps> = ({
   value,
   onChangeActiveFilter,
   onFieldsValuesChange,
+  hasSubmitButton,
 }) => {
   const field = _field as NumericFilterFieldOptions
   const searchIconAriaLabel = getLocalizedValue({ it: 'Filtra', en: 'Filter' })
@@ -61,7 +62,7 @@ export const NumericFilterField: React.FC<FilterFieldCommonProps> = ({
       name={field.name}
       value={value}
       onChange={handleTextFieldChange}
-      onKeyDown={handleKeyDown}
+      onKeyDown={hasSubmitButton ? undefined : handleKeyDown}
       onBlur={handleBlur}
       InputProps={{
         inputProps: {
@@ -69,7 +70,7 @@ export const NumericFilterField: React.FC<FilterFieldCommonProps> = ({
           max: field.max,
           style: { paddingRight: 20 },
         },
-        endAdornment: (
+        endAdornment: hasSubmitButton ? undefined : (
           <IconButton disabled={!value} sx={{ mx: -1.5 }} onClick={handleEnableNumericFilter}>
             <SearchIcon aria-label={searchIconAriaLabel} />
           </IconButton>

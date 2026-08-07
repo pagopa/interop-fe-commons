@@ -45,6 +45,7 @@ describe('getFiltersFieldsDefaultValue testing', () => {
     const result = getFiltersFieldsDefaultValue(fieldMocks)
 
     expect(result).toEqual({
+      'autocomplete-single-field': null,
       'datepicker-field': null,
       'single-field': '',
       'multiple-field': [],

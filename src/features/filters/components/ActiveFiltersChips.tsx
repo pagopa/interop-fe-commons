@@ -1,31 +1,43 @@
 import React from 'react'
 import { Button, Chip, Divider, Stack } from '@mui/material'
-import type { ActiveFilters, FiltersHandler } from '../filters.types'
+import type { ActiveFilters, FilterHandler } from '../filters.types'
 import { getLocalizedValue } from '../../../utils/common.utils'
+import { blue } from '@mui/material/colors'
 
-type ActiveFilterChips = {
+type ActiveFilterChipsProps = {
   activeFilters: ActiveFilters
-  onRemoveActiveFilter: FiltersHandler
+  onRemoveActiveFilter: FilterHandler
   onResetActiveFilters: VoidFunction
+  hasSubmitButton?: boolean
   rightContent?: React.ReactNode
 }
 
-export const ActiveFilterChips: React.FC<ActiveFilterChips> = ({
+const chipFocusStyles = {
+  '&.Mui-focusVisible': {
+    outline: `2px solid ${blue[400]}`,
+    outlineOffset: '1px',
+  },
+}
+
+const cancelFiltersLabel = getLocalizedValue({
+  it: 'Annulla filtri',
+  en: 'Cancel filters',
+})
+
+export const ActiveFilterChips: React.FC<ActiveFilterChipsProps> = ({
   activeFilters,
   onRemoveActiveFilter,
   onResetActiveFilters,
+  hasSubmitButton,
   rightContent,
 }) => {
-  if (activeFilters.length <= 0 && !rightContent) return null
+  if (activeFilters.length === 0 && !rightContent) return null
 
-  const cancelFiltersLabel = getLocalizedValue({
-    it: 'Annulla filtri',
-    en: 'Cancel filters',
-  })
+  const showResetButton = !hasSubmitButton && activeFilters.length > 1
 
   return (
     <>
-      <Divider sx={{ my: 1 }} />
+      <Divider sx={{ my: 2 }} />
 
       <Stack
         spacing={rightContent ? 2 : 0}
@@ -36,23 +48,22 @@ export const ActiveFilterChips: React.FC<ActiveFilterChips> = ({
         <Stack direction="row" flexWrap="wrap" gap={1} alignItems="center" sx={{ width: '100%' }}>
           {activeFilters.map(({ value, label, type, filterKey }) => (
             <Chip
-              key={value}
+              key={`${filterKey}-${value}`}
               label={label}
-              onDelete={onRemoveActiveFilter.bind(null, type, filterKey, value)}
+              sx={chipFocusStyles}
+              onDelete={() => onRemoveActiveFilter(type, filterKey, value)}
             />
           ))}
-          {activeFilters.length > 1 && (
-            <Stack justifyContent="center">
-              <Button
-                sx={{ ml: 2 }}
-                size="small"
-                type="button"
-                variant="naked"
-                onClick={onResetActiveFilters}
-              >
-                {cancelFiltersLabel}
-              </Button>
-            </Stack>
+          {showResetButton && (
+            <Button
+              sx={{ ml: 2 }}
+              size="small"
+              type="button"
+              variant="naked"
+              onClick={onResetActiveFilters}
+            >
+              {cancelFiltersLabel}
+            </Button>
           )}
         </Stack>
         {rightContent}

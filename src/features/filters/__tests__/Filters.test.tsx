@@ -58,6 +58,7 @@ describe('Filters component', () => {
           <Filters
             fields={fieldMocks}
             activeFilters={[]}
+            onSetActiveFilters={vi.fn()}
             onChangeActiveFilter={vi.fn()}
             onRemoveActiveFilter={vi.fn()}
             onResetActiveFilters={vi.fn()}
@@ -75,6 +76,7 @@ describe('Filters component', () => {
           <Filters
             fields={fieldMocks}
             activeFilters={[activeFiltersMocks[0]]}
+            onSetActiveFilters={vi.fn()}
             onChangeActiveFilter={vi.fn()}
             onRemoveActiveFilter={vi.fn()}
             onResetActiveFilters={vi.fn()}
@@ -92,6 +94,7 @@ describe('Filters component', () => {
           <Filters
             fields={fieldMocks}
             activeFilters={activeFiltersMocks}
+            onSetActiveFilters={vi.fn()}
             onChangeActiveFilter={vi.fn()}
             onRemoveActiveFilter={vi.fn()}
             onResetActiveFilters={vi.fn()}
@@ -109,6 +112,7 @@ describe('Filters component', () => {
           <Filters
             fields={fieldMocks}
             activeFilters={[activeFiltersMocks[0]]}
+            onSetActiveFilters={vi.fn()}
             onChangeActiveFilter={vi.fn()}
             onRemoveActiveFilter={vi.fn()}
             onResetActiveFilters={vi.fn()}
@@ -127,6 +131,7 @@ describe('Filters component', () => {
           <Filters
             fields={fieldMocks}
             activeFilters={activeFiltersMocks}
+            onSetActiveFilters={vi.fn()}
             onChangeActiveFilter={vi.fn()}
             onRemoveActiveFilter={vi.fn()}
             onResetActiveFilters={vi.fn()}
@@ -145,6 +150,7 @@ describe('Filters component', () => {
       <Filters
         fields={fieldMocks}
         activeFilters={[]}
+        onSetActiveFilters={vi.fn()}
         onChangeActiveFilter={onChangeActiveFilterFn}
         onRemoveActiveFilter={vi.fn()}
         onResetActiveFilters={vi.fn()}
@@ -167,6 +173,7 @@ describe('Filters component', () => {
       <Filters
         fields={fieldMocks}
         activeFilters={[]}
+        onSetActiveFilters={vi.fn()}
         onChangeActiveFilter={onChangeActiveFilterFn}
         onRemoveActiveFilter={vi.fn()}
         onResetActiveFilters={vi.fn()}
@@ -200,6 +207,7 @@ describe('Filters component', () => {
       <Filters
         fields={fieldMocks}
         activeFilters={activeFiltersMocks}
+        onSetActiveFilters={vi.fn()}
         onChangeActiveFilter={vi.fn()}
         onRemoveActiveFilter={onRemoveActiveFilterFn}
         onResetActiveFilters={vi.fn()}
@@ -223,6 +231,7 @@ describe('Filters component', () => {
       <Filters
         fields={fieldMocks}
         activeFilters={activeFiltersMocks}
+        onSetActiveFilters={vi.fn()}
         onChangeActiveFilter={vi.fn()}
         onRemoveActiveFilter={vi.fn()}
         onResetActiveFilters={onResetActiveFilters}
@@ -232,5 +241,153 @@ describe('Filters component', () => {
     const clearFiltersButton = screen.getByRole('button', { name: 'Annulla filtri' })
     await user.click(clearFiltersButton)
     expect(onResetActiveFilters).toBeCalled()
+  })
+})
+
+describe('Filters component with hasSubmitButton', () => {
+  it('should render "Filtra" and "Annulla filtri" buttons', () => {
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={[]}
+        onSetActiveFilters={vi.fn()}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+        hasSubmitButton
+      />
+    )
+
+    expect(screen.getByRole('button', { name: 'Filtra' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Annulla filtri' })).toBeInTheDocument()
+  })
+
+  it('should not render submit buttons when hasSubmitButton is not set', () => {
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={[]}
+        onSetActiveFilters={vi.fn()}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+      />
+    )
+
+    expect(screen.queryByRole('button', { name: 'Filtra' })).not.toBeInTheDocument()
+  })
+
+  it('should not apply filters immediately when typing in a freetext field', async () => {
+    const user = userEvent.setup()
+    const onChangeActiveFilterFn = vi.fn()
+
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={[]}
+        onSetActiveFilters={vi.fn()}
+        onChangeActiveFilter={onChangeActiveFilterFn}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+        hasSubmitButton
+      />
+    )
+
+    const singleFilterField = screen.getByLabelText('Single Filter Field') as HTMLInputElement
+    await user.type(singleFilterField, 'test-value')
+    expect(singleFilterField.value).toBe('test-value')
+    expect(onChangeActiveFilterFn).not.toHaveBeenCalled()
+  })
+
+  it('should not apply filters on Enter key in a freetext field', async () => {
+    const user = userEvent.setup()
+    const onChangeActiveFilterFn = vi.fn()
+
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={[]}
+        onSetActiveFilters={vi.fn()}
+        onChangeActiveFilter={onChangeActiveFilterFn}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+        hasSubmitButton
+      />
+    )
+
+    const singleFilterField = screen.getByLabelText('Single Filter Field') as HTMLInputElement
+    await user.type(singleFilterField, 'test-value{enter}')
+    expect(onChangeActiveFilterFn).not.toHaveBeenCalled()
+  })
+
+  it('should not render search icon in freetext fields', () => {
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={[]}
+        onSetActiveFilters={vi.fn()}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+        hasSubmitButton
+      />
+    )
+
+    expect(screen.queryByLabelText('Filtra')).not.toBeInTheDocument()
+  })
+
+  it('should call onSetActiveFilters with all field values when clicking "Filtra"', async () => {
+    const user = userEvent.setup()
+    const onSetActiveFiltersFn = vi.fn()
+
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={[]}
+        onSetActiveFilters={onSetActiveFiltersFn}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+        hasSubmitButton
+      />
+    )
+
+    const singleFilterField = screen.getByLabelText('Single Filter Field') as HTMLInputElement
+    await user.type(singleFilterField, 'test-value')
+
+    const submitButton = screen.getByRole('button', { name: 'Filtra' })
+    await user.click(submitButton)
+
+    expect(onSetActiveFiltersFn).toHaveBeenCalledWith(
+      fieldMocks,
+      expect.objectContaining({ 'single-field': 'test-value' })
+    )
+  })
+
+  it('should reset fields and call onResetActiveFilters when clicking "Annulla filtri"', async () => {
+    const user = userEvent.setup()
+    const onResetActiveFiltersFn = vi.fn()
+
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={[]}
+        onSetActiveFilters={vi.fn()}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={onResetActiveFiltersFn}
+        hasSubmitButton
+      />
+    )
+
+    const singleFilterField = screen.getByLabelText('Single Filter Field') as HTMLInputElement
+    await user.type(singleFilterField, 'something')
+    expect(singleFilterField.value).toBe('something')
+
+    const cancelButton = screen.getByRole('button', { name: 'Annulla filtri' })
+    await user.click(cancelButton)
+
+    expect(onResetActiveFiltersFn).toHaveBeenCalled()
+    expect(singleFilterField.value).toBe('')
   })
 })
