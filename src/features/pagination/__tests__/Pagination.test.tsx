@@ -30,9 +30,7 @@ describe('Pagination component', () => {
 
     it('If user click on page 5, page 5 should be selected', async () => {
       const screen = render(<PaginationExample />)
-      const pageButton = screen.getByRole('button', {
-        name: 'Go to page 5',
-      })
+      const pageButton = screen.getByRole('button', { name: 'Go to page 5' })
 
       expect(pageButton).not.toBeNull()
       await userEvent.click(pageButton, { delay: 2 })
@@ -52,7 +50,7 @@ describe('Pagination component', () => {
     it('Should be available [10,24,36] as rows per page as default options', async () => {
       const screen = render(<PaginationExample withRowsPerPage />)
       const selectElement = screen.getByTestId('rows-per-page-select')
-      const selectButton = within(selectElement).getByRole('button')
+      const selectButton = within(selectElement).getByRole('combobox')
 
       expect(selectElement).toBeDefined()
       await userEvent.click(selectButton)

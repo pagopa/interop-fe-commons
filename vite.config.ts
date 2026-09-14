@@ -34,6 +34,11 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './setupTests.js',
+    server: {
+      deps: {
+        inline: ['@pagopa/mui-italia'],
+      },
+    },
     coverage: {
       provider: 'v8',
       reporter: ['text', 'lcov'],
