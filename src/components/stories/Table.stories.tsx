@@ -4,10 +4,7 @@ import { TableRow } from '../TableRow'
 import type { Meta, StoryFn } from '@storybook/react'
 import { Button, Chip } from '@mui/material'
 
-export default {
-  title: 'Components/Table',
-  component: _Table,
-} as Meta<typeof _Table>
+export default { title: 'Components/Table', component: _Table } as Meta<typeof _Table>
 
 const tableData = [
   { name: 'e-service 1', state: 'ACTIVE' },
@@ -39,7 +36,7 @@ export const Empty: StoryFn<typeof _Table> = () => {
   const headLabels = ['Nome', 'Stato', '']
   return (
     <_Table isEmpty={true} headLabels={headLabels}>
-      {}
+      <></>
     </_Table>
   )
 }

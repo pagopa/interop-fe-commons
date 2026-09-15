@@ -1,10 +1,9 @@
 import React from 'react'
 import type { ActiveFilters, FilterFields } from '@/features/filters/filters.types'
-import renderer from 'react-test-renderer'
 import { vi } from 'vitest'
 import userEvent from '@testing-library/user-event'
 import { fireEvent } from '@testing-library/react'
-import { renderWithRouter, TestingRouterWrapper } from '@/utils/testing.utils'
+import { renderWithRouter } from '@/utils/testing.utils'
 import { Filters } from '../components/Filters'
 
 const onTextInputChangeFn = vi.fn()
@@ -52,90 +51,75 @@ const activeFiltersMocks: ActiveFilters = [
 
 describe('Filters component', () => {
   it('matches the snapshot without active filters', () => {
-    const tree = renderer
-      .create(
-        <TestingRouterWrapper>
-          <Filters
-            fields={fieldMocks}
-            activeFilters={[]}
-            onChangeActiveFilter={vi.fn()}
-            onRemoveActiveFilter={vi.fn()}
-            onResetActiveFilters={vi.fn()}
-          />
-        </TestingRouterWrapper>
-      )
-      .toJSON()
-    expect(tree).toMatchSnapshot()
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={[]}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+      />
+    )
+
+    expect(screen.container).toMatchSnapshot()
   })
 
   it('matches the snapshot with one active filter', () => {
-    const tree = renderer
-      .create(
-        <TestingRouterWrapper>
-          <Filters
-            fields={fieldMocks}
-            activeFilters={[activeFiltersMocks[0]]}
-            onChangeActiveFilter={vi.fn()}
-            onRemoveActiveFilter={vi.fn()}
-            onResetActiveFilters={vi.fn()}
-          />
-        </TestingRouterWrapper>
-      )
-      .toJSON()
-    expect(tree).toMatchSnapshot()
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={[activeFiltersMocks[0]]}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+      />
+    )
+
+    expect(screen.container).toMatchSnapshot()
   })
 
   it('matches the snapshot with more than one active filters', () => {
-    const tree = renderer
-      .create(
-        <TestingRouterWrapper>
-          <Filters
-            fields={fieldMocks}
-            activeFilters={activeFiltersMocks}
-            onChangeActiveFilter={vi.fn()}
-            onRemoveActiveFilter={vi.fn()}
-            onResetActiveFilters={vi.fn()}
-          />
-        </TestingRouterWrapper>
-      )
-      .toJSON()
-    expect(tree).toMatchSnapshot()
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={activeFiltersMocks}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+      />
+    )
+
+    expect(screen.container).toMatchSnapshot()
   })
 
   it('matches the snapshot with one active filter and a right content', () => {
-    const tree = renderer
-      .create(
-        <TestingRouterWrapper>
-          <Filters
-            fields={fieldMocks}
-            activeFilters={[activeFiltersMocks[0]]}
-            onChangeActiveFilter={vi.fn()}
-            onRemoveActiveFilter={vi.fn()}
-            onResetActiveFilters={vi.fn()}
-            rightContent={<div>Right Content</div>}
-          />
-        </TestingRouterWrapper>
-      )
-      .toJSON()
-    expect(tree).toMatchSnapshot()
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={[activeFiltersMocks[0]]}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+        rightContent={<div>Right Content</div>}
+      />
+    )
+
+    expect(screen.container).toMatchSnapshot()
   })
 
   it('matches the snapshot with more than one active filters and right content', () => {
-    const tree = renderer
-      .create(
-        <TestingRouterWrapper>
-          <Filters
-            fields={fieldMocks}
-            activeFilters={activeFiltersMocks}
-            onChangeActiveFilter={vi.fn()}
-            onRemoveActiveFilter={vi.fn()}
-            onResetActiveFilters={vi.fn()}
-            rightContent={<div>Right Content</div>}
-          />
-        </TestingRouterWrapper>
-      )
-      .toJSON()
-    expect(tree).toMatchSnapshot()
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={activeFiltersMocks}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+        rightContent={<div>Right Content</div>}
+      />
+    )
+
+    expect(screen.container).toMatchSnapshot()
   })
 
   it('should correctly add a filter using single filter field', async () => {
@@ -182,14 +166,8 @@ describe('Filters component', () => {
     fireEvent.click(option2)
     vi.advanceTimersByTime(400)
     expect(onChangeActiveFilterFn).toBeCalledWith('autocomplete-multiple', 'multiple-field', [
-      {
-        label: 'Option1',
-        value: 'option-1',
-      },
-      {
-        label: 'Option2',
-        value: 'option-2',
-      },
+      { label: 'Option1', value: 'option-1' },
+      { label: 'Option2', value: 'option-2' },
     ])
     vi.useRealTimers()
   })

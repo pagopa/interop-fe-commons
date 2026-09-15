@@ -1,5 +1,4 @@
 import React from 'react'
-import { Checkbox } from '@mui/material'
 import type {
   AutocompleteFilterFieldOptions,
   FilterFieldCommonProps,
@@ -38,17 +37,6 @@ export const AutocompleteMultipleFilterField: React.FC<FilterFieldCommonProps> =
       onInputChange={field?.onTextInputChange}
       onChange={(_, data) => {
         handleAutocompleteMultipleChange(data)
-      }}
-      renderOption={(props, option, { selected }) => {
-        const label = option.label
-        if (!label) return null
-
-        return (
-          <li {...props}>
-            <Checkbox key={option.value} checked={selected} name={label} />
-            {label}
-          </li>
-        )
       }}
     />
   )
