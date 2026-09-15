@@ -1,6 +1,6 @@
 {
   "name": "@pagopa/interop-fe-commons",
-  "version": "1.6.0-RC1",
+  "version": "1.6.2-RC1",
   "description": "",
   "scripts": {
     "lint": "tsc",
@@ -22,7 +22,7 @@
     "@mui/material": "^5.14.9",
     "@mui/system": "^5.14.9",
     "@mui/x-date-pickers": "^6.13.0",
-    "@pagopa/mui-italia": "^2.7.0",
+    "@pagopa/mui-italia": "^2.8.0-RC1",
     "@storybook/addon-actions": "^7.4.1",
     "@storybook/addon-essentials": "^7.4.1",
     "@storybook/addon-interactions": "^7.4.1",
@@ -83,7 +83,7 @@
     "@mui/material": "^5.14.9",
     "@mui/system": "^5.14.9",
     "@mui/x-date-pickers": "^6.13.0",
-    "@pagopa/mui-italia": "^2.7.0",
+    "@pagopa/mui-italia": "^2.8.0-RC1",
     "date-fns": "^2.30.0",
     "i18next": "^23.5.1",
     "mixpanel-browser": "^2.50.0",

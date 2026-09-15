@@ -15,10 +15,10 @@ exports[`Filters component > matches the snapshot with more than one active filt
           class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-25c63u-MuiFormLabel-root-MuiInputLabel-root"
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-gr3956-MuiFormLabel-root-MuiInputLabel-root"
             data-shrink="false"
-            for=":rf:"
-            id=":rf:-label"
+            for=":rc:"
+            id=":rc:-label"
           >
             Single Filter Field
           </label>
@@ -28,7 +28,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
             <input
               aria-invalid="false"
               class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-13u80ox-MuiInputBase-input-MuiOutlinedInput-input"
-              id=":rf:"
+              id=":rc:"
               name="single-field"
               type="text"
               value=""
@@ -48,16 +48,16 @@ exports[`Filters component > matches the snapshot with more than one active filt
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
                 />
               </svg>
             </button>
             <fieldset
               aria-hidden="true"
-              class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                class="css-njhac4-MuiNotchedOutlined-root"
+                class="css-yjsfm1"
               >
                 <span>
                   Single Filter Field
@@ -74,10 +74,10 @@ exports[`Filters component > matches the snapshot with more than one active filt
           class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-25c63u-MuiFormLabel-root-MuiInputLabel-root"
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-gr3956-MuiFormLabel-root-MuiInputLabel-root"
             data-shrink="false"
-            for=":rg:"
-            id=":rg:-label"
+            for=":rd:"
+            id=":rd:-label"
           >
             Numeric Field
           </label>
@@ -87,7 +87,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
             <input
               aria-invalid="false"
               class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-13u80ox-MuiInputBase-input-MuiOutlinedInput-input"
-              id=":rg:"
+              id=":rd:"
               name="numeric-field"
               style="padding-right: 20px;"
               type="number"
@@ -108,16 +108,16 @@ exports[`Filters component > matches the snapshot with more than one active filt
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
                 />
               </svg>
             </button>
             <fieldset
               aria-hidden="true"
-              class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                class="css-njhac4-MuiNotchedOutlined-root"
+                class="css-yjsfm1"
               >
                 <span>
                   Numeric Field
@@ -137,10 +137,10 @@ exports[`Filters component > matches the snapshot with more than one active filt
             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-p1xhd7-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1lj3yok-MuiFormLabel-root-MuiInputLabel-root"
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1t8z5a8-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink="false"
-              for=":rh:"
-              id=":rh:-label"
+              for=":re:"
+              id=":re:-label"
             >
               Multiple Filter Field
             </label>
@@ -149,14 +149,14 @@ exports[`Filters component > matches the snapshot with more than one active filt
             >
               <input
                 aria-autocomplete="list"
-                aria-controls=":rh:-listbox"
+                aria-controls=":re:-listbox"
                 aria-disabled="false"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-invalid="false"
                 autocomplete="off"
                 class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-j6moju-MuiInputBase-input-MuiOutlinedInput-input"
-                id=":rh:"
+                id=":re:"
                 role="combobox"
                 type="text"
                 value=""
@@ -178,17 +178,17 @@ exports[`Filters component > matches the snapshot with more than one active filt
                     viewBox="0 0 24 24"
                   >
                     <path
-                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"
+                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
                     />
                   </svg>
                 </button>
               </div>
               <fieldset
                 aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="css-njhac4-MuiNotchedOutlined-root"
+                  class="css-yjsfm1"
                 >
                   <span>
                     Multiple Filter Field
@@ -201,7 +201,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         <div
           aria-atomic="true"
           aria-live="polite"
-          class="MuiBox-root css-ty8jgw"
+          class="MuiBox-root css-trfuzi"
           role="status"
         />
       </div>
@@ -215,10 +215,10 @@ exports[`Filters component > matches the snapshot with more than one active filt
             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-p1xhd7-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1lj3yok-MuiFormLabel-root-MuiInputLabel-root"
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1t8z5a8-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink="false"
-              for=":rj:"
-              id=":rj:-label"
+              for=":rg:"
+              id=":rg:-label"
             >
               Autocomplete Single Field
             </label>
@@ -227,14 +227,14 @@ exports[`Filters component > matches the snapshot with more than one active filt
             >
               <input
                 aria-autocomplete="list"
-                aria-controls=":rj:-listbox"
+                aria-controls=":rg:-listbox"
                 aria-disabled="false"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-invalid="false"
                 autocomplete="off"
                 class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-j6moju-MuiInputBase-input-MuiOutlinedInput-input"
-                id=":rj:"
+                id=":rg:"
                 role="combobox"
                 type="text"
                 value=""
@@ -256,17 +256,17 @@ exports[`Filters component > matches the snapshot with more than one active filt
                     viewBox="0 0 24 24"
                   >
                     <path
-                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"
+                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
                     />
                   </svg>
                 </button>
               </div>
               <fieldset
                 aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="css-njhac4-MuiNotchedOutlined-root"
+                  class="css-yjsfm1"
                 >
                   <span>
                     Autocomplete Single Field
@@ -279,7 +279,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         <div
           aria-atomic="true"
           aria-live="polite"
-          class="MuiBox-root css-ty8jgw"
+          class="MuiBox-root css-trfuzi"
           role="status"
         />
       </div>
@@ -294,7 +294,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         class="MuiStack-root css-1xvxq01-MuiStack-root"
       >
         <div
-          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1tj6e72-MuiButtonBase-root-MuiChip-root"
+          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-ajz0oz-MuiButtonBase-root-MuiChip-root"
           role="button"
           tabindex="0"
         >
@@ -316,7 +316,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
           </svg>
         </div>
         <div
-          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1tj6e72-MuiButtonBase-root-MuiChip-root"
+          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-ajz0oz-MuiButtonBase-root-MuiChip-root"
           role="button"
           tabindex="0"
         >
@@ -338,7 +338,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
           </svg>
         </div>
         <div
-          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1tj6e72-MuiButtonBase-root-MuiChip-root"
+          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-ajz0oz-MuiButtonBase-root-MuiChip-root"
           role="button"
           tabindex="0"
         >
@@ -363,7 +363,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
           class="MuiStack-root css-omazcq-MuiStack-root"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-colorPrimary MuiButton-disableElevation css-b34qno-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-disableElevation MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-disableElevation css-1e5at4d-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
@@ -394,10 +394,10 @@ exports[`Filters component > matches the snapshot with more than one active filt
           class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-25c63u-MuiFormLabel-root-MuiInputLabel-root"
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-gr3956-MuiFormLabel-root-MuiInputLabel-root"
             data-shrink="false"
-            for=":rt:"
-            id=":rt:-label"
+            for=":ro:"
+            id=":ro:-label"
           >
             Single Filter Field
           </label>
@@ -407,7 +407,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
             <input
               aria-invalid="false"
               class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-13u80ox-MuiInputBase-input-MuiOutlinedInput-input"
-              id=":rt:"
+              id=":ro:"
               name="single-field"
               type="text"
               value=""
@@ -427,16 +427,16 @@ exports[`Filters component > matches the snapshot with more than one active filt
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
                 />
               </svg>
             </button>
             <fieldset
               aria-hidden="true"
-              class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                class="css-njhac4-MuiNotchedOutlined-root"
+                class="css-yjsfm1"
               >
                 <span>
                   Single Filter Field
@@ -453,10 +453,10 @@ exports[`Filters component > matches the snapshot with more than one active filt
           class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-25c63u-MuiFormLabel-root-MuiInputLabel-root"
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-gr3956-MuiFormLabel-root-MuiInputLabel-root"
             data-shrink="false"
-            for=":ru:"
-            id=":ru:-label"
+            for=":rp:"
+            id=":rp:-label"
           >
             Numeric Field
           </label>
@@ -466,7 +466,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
             <input
               aria-invalid="false"
               class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-13u80ox-MuiInputBase-input-MuiOutlinedInput-input"
-              id=":ru:"
+              id=":rp:"
               name="numeric-field"
               style="padding-right: 20px;"
               type="number"
@@ -487,16 +487,16 @@ exports[`Filters component > matches the snapshot with more than one active filt
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
                 />
               </svg>
             </button>
             <fieldset
               aria-hidden="true"
-              class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                class="css-njhac4-MuiNotchedOutlined-root"
+                class="css-yjsfm1"
               >
                 <span>
                   Numeric Field
@@ -516,10 +516,10 @@ exports[`Filters component > matches the snapshot with more than one active filt
             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-p1xhd7-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1lj3yok-MuiFormLabel-root-MuiInputLabel-root"
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1t8z5a8-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink="false"
-              for=":rv:"
-              id=":rv:-label"
+              for=":rq:"
+              id=":rq:-label"
             >
               Multiple Filter Field
             </label>
@@ -528,14 +528,14 @@ exports[`Filters component > matches the snapshot with more than one active filt
             >
               <input
                 aria-autocomplete="list"
-                aria-controls=":rv:-listbox"
+                aria-controls=":rq:-listbox"
                 aria-disabled="false"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-invalid="false"
                 autocomplete="off"
                 class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-j6moju-MuiInputBase-input-MuiOutlinedInput-input"
-                id=":rv:"
+                id=":rq:"
                 role="combobox"
                 type="text"
                 value=""
@@ -557,17 +557,17 @@ exports[`Filters component > matches the snapshot with more than one active filt
                     viewBox="0 0 24 24"
                   >
                     <path
-                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"
+                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
                     />
                   </svg>
                 </button>
               </div>
               <fieldset
                 aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="css-njhac4-MuiNotchedOutlined-root"
+                  class="css-yjsfm1"
                 >
                   <span>
                     Multiple Filter Field
@@ -580,7 +580,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         <div
           aria-atomic="true"
           aria-live="polite"
-          class="MuiBox-root css-ty8jgw"
+          class="MuiBox-root css-trfuzi"
           role="status"
         />
       </div>
@@ -594,10 +594,10 @@ exports[`Filters component > matches the snapshot with more than one active filt
             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-p1xhd7-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1lj3yok-MuiFormLabel-root-MuiInputLabel-root"
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1t8z5a8-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink="false"
-              for=":r11:"
-              id=":r11:-label"
+              for=":rs:"
+              id=":rs:-label"
             >
               Autocomplete Single Field
             </label>
@@ -606,14 +606,14 @@ exports[`Filters component > matches the snapshot with more than one active filt
             >
               <input
                 aria-autocomplete="list"
-                aria-controls=":r11:-listbox"
+                aria-controls=":rs:-listbox"
                 aria-disabled="false"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-invalid="false"
                 autocomplete="off"
                 class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-j6moju-MuiInputBase-input-MuiOutlinedInput-input"
-                id=":r11:"
+                id=":rs:"
                 role="combobox"
                 type="text"
                 value=""
@@ -635,17 +635,17 @@ exports[`Filters component > matches the snapshot with more than one active filt
                     viewBox="0 0 24 24"
                   >
                     <path
-                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"
+                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
                     />
                   </svg>
                 </button>
               </div>
               <fieldset
                 aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="css-njhac4-MuiNotchedOutlined-root"
+                  class="css-yjsfm1"
                 >
                   <span>
                     Autocomplete Single Field
@@ -658,7 +658,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         <div
           aria-atomic="true"
           aria-live="polite"
-          class="MuiBox-root css-ty8jgw"
+          class="MuiBox-root css-trfuzi"
           role="status"
         />
       </div>
@@ -673,7 +673,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         class="MuiStack-root css-1xvxq01-MuiStack-root"
       >
         <div
-          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1tj6e72-MuiButtonBase-root-MuiChip-root"
+          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-ajz0oz-MuiButtonBase-root-MuiChip-root"
           role="button"
           tabindex="0"
         >
@@ -695,7 +695,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
           </svg>
         </div>
         <div
-          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1tj6e72-MuiButtonBase-root-MuiChip-root"
+          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-ajz0oz-MuiButtonBase-root-MuiChip-root"
           role="button"
           tabindex="0"
         >
@@ -717,7 +717,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
           </svg>
         </div>
         <div
-          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1tj6e72-MuiButtonBase-root-MuiChip-root"
+          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-ajz0oz-MuiButtonBase-root-MuiChip-root"
           role="button"
           tabindex="0"
         >
@@ -742,7 +742,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
           class="MuiStack-root css-omazcq-MuiStack-root"
         >
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-colorPrimary MuiButton-disableElevation MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-colorPrimary MuiButton-disableElevation css-b34qno-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-disableElevation MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-disableElevation css-1e5at4d-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="button"
           >
@@ -776,10 +776,10 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
           class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-25c63u-MuiFormLabel-root-MuiInputLabel-root"
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-gr3956-MuiFormLabel-root-MuiInputLabel-root"
             data-shrink="false"
-            for=":r8:"
-            id=":r8:-label"
+            for=":r6:"
+            id=":r6:-label"
           >
             Single Filter Field
           </label>
@@ -789,7 +789,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
             <input
               aria-invalid="false"
               class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-13u80ox-MuiInputBase-input-MuiOutlinedInput-input"
-              id=":r8:"
+              id=":r6:"
               name="single-field"
               type="text"
               value=""
@@ -809,16 +809,16 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
                 />
               </svg>
             </button>
             <fieldset
               aria-hidden="true"
-              class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                class="css-njhac4-MuiNotchedOutlined-root"
+                class="css-yjsfm1"
               >
                 <span>
                   Single Filter Field
@@ -835,10 +835,10 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
           class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-25c63u-MuiFormLabel-root-MuiInputLabel-root"
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-gr3956-MuiFormLabel-root-MuiInputLabel-root"
             data-shrink="false"
-            for=":r9:"
-            id=":r9:-label"
+            for=":r7:"
+            id=":r7:-label"
           >
             Numeric Field
           </label>
@@ -848,7 +848,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
             <input
               aria-invalid="false"
               class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-13u80ox-MuiInputBase-input-MuiOutlinedInput-input"
-              id=":r9:"
+              id=":r7:"
               name="numeric-field"
               style="padding-right: 20px;"
               type="number"
@@ -869,16 +869,16 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
                 />
               </svg>
             </button>
             <fieldset
               aria-hidden="true"
-              class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                class="css-njhac4-MuiNotchedOutlined-root"
+                class="css-yjsfm1"
               >
                 <span>
                   Numeric Field
@@ -898,12 +898,90 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-p1xhd7-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1lj3yok-MuiFormLabel-root-MuiInputLabel-root"
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1t8z5a8-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="false"
+              for=":r8:"
+              id=":r8:-label"
+            >
+              Multiple Filter Field
+            </label>
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-1lkwa1o-MuiInputBase-root-MuiOutlinedInput-root"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls=":r8:-listbox"
+                aria-disabled="false"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-invalid="false"
+                autocomplete="off"
+                class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-j6moju-MuiInputBase-input-MuiOutlinedInput-input"
+                id=":r8:"
+                role="combobox"
+                type="text"
+                value=""
+              />
+              <div
+                class="MuiBox-root css-171onha"
+              >
+                <button
+                  aria-label="Open the dropdown menu"
+                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1uv5ngx-MuiButtonBase-root-MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1jxdcj3-MuiSvgIcon-root"
+                    data-testid="KeyboardArrowDownIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <fieldset
+                aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="css-yjsfm1"
+                >
+                  <span>
+                    Multiple Filter Field
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-atomic="true"
+          aria-live="polite"
+          class="MuiBox-root css-trfuzi"
+          role="status"
+        />
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-jpaljg-MuiGrid-root"
+      >
+        <div
+          class="MuiBox-root css-79elbk"
+        >
+          <div
+            class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-p1xhd7-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1t8z5a8-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink="false"
               for=":ra:"
               id=":ra:-label"
             >
-              Multiple Filter Field
+              Autocomplete Single Field
             </label>
             <div
               class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-1lkwa1o-MuiInputBase-root-MuiOutlinedInput-root"
@@ -939,95 +1017,17 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
                     viewBox="0 0 24 24"
                   >
                     <path
-                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"
+                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
                     />
                   </svg>
                 </button>
               </div>
               <fieldset
                 aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="css-njhac4-MuiNotchedOutlined-root"
-                >
-                  <span>
-                    Multiple Filter Field
-                  </span>
-                </legend>
-              </fieldset>
-            </div>
-          </div>
-        </div>
-        <div
-          aria-atomic="true"
-          aria-live="polite"
-          class="MuiBox-root css-ty8jgw"
-          role="status"
-        />
-      </div>
-      <div
-        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-jpaljg-MuiGrid-root"
-      >
-        <div
-          class="MuiBox-root css-79elbk"
-        >
-          <div
-            class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-p1xhd7-MuiFormControl-root-MuiTextField-root"
-          >
-            <label
-              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1lj3yok-MuiFormLabel-root-MuiInputLabel-root"
-              data-shrink="false"
-              for=":rc:"
-              id=":rc:-label"
-            >
-              Autocomplete Single Field
-            </label>
-            <div
-              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-1lkwa1o-MuiInputBase-root-MuiOutlinedInput-root"
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls=":rc:-listbox"
-                aria-disabled="false"
-                aria-expanded="false"
-                aria-haspopup="listbox"
-                aria-invalid="false"
-                autocomplete="off"
-                class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-j6moju-MuiInputBase-input-MuiOutlinedInput-input"
-                id=":rc:"
-                role="combobox"
-                type="text"
-                value=""
-              />
-              <div
-                class="MuiBox-root css-171onha"
-              >
-                <button
-                  aria-label="Open the dropdown menu"
-                  class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1uv5ngx-MuiButtonBase-root-MuiIconButton-root"
-                  tabindex="0"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1jxdcj3-MuiSvgIcon-root"
-                    data-testid="KeyboardArrowDownIcon"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <fieldset
-                aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
-              >
-                <legend
-                  class="css-njhac4-MuiNotchedOutlined-root"
+                  class="css-yjsfm1"
                 >
                   <span>
                     Autocomplete Single Field
@@ -1040,7 +1040,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
         <div
           aria-atomic="true"
           aria-live="polite"
-          class="MuiBox-root css-ty8jgw"
+          class="MuiBox-root css-trfuzi"
           role="status"
         />
       </div>
@@ -1055,7 +1055,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
         class="MuiStack-root css-1xvxq01-MuiStack-root"
       >
         <div
-          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1tj6e72-MuiButtonBase-root-MuiChip-root"
+          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-ajz0oz-MuiButtonBase-root-MuiChip-root"
           role="button"
           tabindex="0"
         >
@@ -1097,10 +1097,10 @@ exports[`Filters component > matches the snapshot with one active filter and a r
           class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-25c63u-MuiFormLabel-root-MuiInputLabel-root"
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-gr3956-MuiFormLabel-root-MuiInputLabel-root"
             data-shrink="false"
-            for=":rm:"
-            id=":rm:-label"
+            for=":ri:"
+            id=":ri:-label"
           >
             Single Filter Field
           </label>
@@ -1110,7 +1110,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
             <input
               aria-invalid="false"
               class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-13u80ox-MuiInputBase-input-MuiOutlinedInput-input"
-              id=":rm:"
+              id=":ri:"
               name="single-field"
               type="text"
               value=""
@@ -1130,16 +1130,16 @@ exports[`Filters component > matches the snapshot with one active filter and a r
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
                 />
               </svg>
             </button>
             <fieldset
               aria-hidden="true"
-              class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                class="css-njhac4-MuiNotchedOutlined-root"
+                class="css-yjsfm1"
               >
                 <span>
                   Single Filter Field
@@ -1156,10 +1156,10 @@ exports[`Filters component > matches the snapshot with one active filter and a r
           class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-25c63u-MuiFormLabel-root-MuiInputLabel-root"
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-gr3956-MuiFormLabel-root-MuiInputLabel-root"
             data-shrink="false"
-            for=":rn:"
-            id=":rn:-label"
+            for=":rj:"
+            id=":rj:-label"
           >
             Numeric Field
           </label>
@@ -1169,7 +1169,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
             <input
               aria-invalid="false"
               class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-13u80ox-MuiInputBase-input-MuiOutlinedInput-input"
-              id=":rn:"
+              id=":rj:"
               name="numeric-field"
               style="padding-right: 20px;"
               type="number"
@@ -1190,16 +1190,16 @@ exports[`Filters component > matches the snapshot with one active filter and a r
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
                 />
               </svg>
             </button>
             <fieldset
               aria-hidden="true"
-              class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                class="css-njhac4-MuiNotchedOutlined-root"
+                class="css-yjsfm1"
               >
                 <span>
                   Numeric Field
@@ -1219,10 +1219,10 @@ exports[`Filters component > matches the snapshot with one active filter and a r
             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-p1xhd7-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1lj3yok-MuiFormLabel-root-MuiInputLabel-root"
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1t8z5a8-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink="false"
-              for=":ro:"
-              id=":ro:-label"
+              for=":rk:"
+              id=":rk:-label"
             >
               Multiple Filter Field
             </label>
@@ -1231,14 +1231,14 @@ exports[`Filters component > matches the snapshot with one active filter and a r
             >
               <input
                 aria-autocomplete="list"
-                aria-controls=":ro:-listbox"
+                aria-controls=":rk:-listbox"
                 aria-disabled="false"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-invalid="false"
                 autocomplete="off"
                 class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-j6moju-MuiInputBase-input-MuiOutlinedInput-input"
-                id=":ro:"
+                id=":rk:"
                 role="combobox"
                 type="text"
                 value=""
@@ -1260,17 +1260,17 @@ exports[`Filters component > matches the snapshot with one active filter and a r
                     viewBox="0 0 24 24"
                   >
                     <path
-                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"
+                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
                     />
                   </svg>
                 </button>
               </div>
               <fieldset
                 aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="css-njhac4-MuiNotchedOutlined-root"
+                  class="css-yjsfm1"
                 >
                   <span>
                     Multiple Filter Field
@@ -1283,7 +1283,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
         <div
           aria-atomic="true"
           aria-live="polite"
-          class="MuiBox-root css-ty8jgw"
+          class="MuiBox-root css-trfuzi"
           role="status"
         />
       </div>
@@ -1297,10 +1297,10 @@ exports[`Filters component > matches the snapshot with one active filter and a r
             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-p1xhd7-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1lj3yok-MuiFormLabel-root-MuiInputLabel-root"
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1t8z5a8-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink="false"
-              for=":rq:"
-              id=":rq:-label"
+              for=":rm:"
+              id=":rm:-label"
             >
               Autocomplete Single Field
             </label>
@@ -1309,14 +1309,14 @@ exports[`Filters component > matches the snapshot with one active filter and a r
             >
               <input
                 aria-autocomplete="list"
-                aria-controls=":rq:-listbox"
+                aria-controls=":rm:-listbox"
                 aria-disabled="false"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-invalid="false"
                 autocomplete="off"
                 class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-j6moju-MuiInputBase-input-MuiOutlinedInput-input"
-                id=":rq:"
+                id=":rm:"
                 role="combobox"
                 type="text"
                 value=""
@@ -1338,17 +1338,17 @@ exports[`Filters component > matches the snapshot with one active filter and a r
                     viewBox="0 0 24 24"
                   >
                     <path
-                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"
+                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
                     />
                   </svg>
                 </button>
               </div>
               <fieldset
                 aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="css-njhac4-MuiNotchedOutlined-root"
+                  class="css-yjsfm1"
                 >
                   <span>
                     Autocomplete Single Field
@@ -1361,7 +1361,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
         <div
           aria-atomic="true"
           aria-live="polite"
-          class="MuiBox-root css-ty8jgw"
+          class="MuiBox-root css-trfuzi"
           role="status"
         />
       </div>
@@ -1376,7 +1376,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
         class="MuiStack-root css-1xvxq01-MuiStack-root"
       >
         <div
-          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1tj6e72-MuiButtonBase-root-MuiChip-root"
+          class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-ajz0oz-MuiButtonBase-root-MuiChip-root"
           role="button"
           tabindex="0"
         >
@@ -1421,10 +1421,10 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
           class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-25c63u-MuiFormLabel-root-MuiInputLabel-root"
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-gr3956-MuiFormLabel-root-MuiInputLabel-root"
             data-shrink="false"
-            for=":r1:"
-            id=":r1:-label"
+            for=":r0:"
+            id=":r0:-label"
           >
             Single Filter Field
           </label>
@@ -1434,7 +1434,7 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
             <input
               aria-invalid="false"
               class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-13u80ox-MuiInputBase-input-MuiOutlinedInput-input"
-              id=":r1:"
+              id=":r0:"
               name="single-field"
               type="text"
               value=""
@@ -1454,16 +1454,16 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
                 />
               </svg>
             </button>
             <fieldset
               aria-hidden="true"
-              class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                class="css-njhac4-MuiNotchedOutlined-root"
+                class="css-yjsfm1"
               >
                 <span>
                   Single Filter Field
@@ -1480,10 +1480,10 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
           class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-25c63u-MuiFormLabel-root-MuiInputLabel-root"
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-gr3956-MuiFormLabel-root-MuiInputLabel-root"
             data-shrink="false"
-            for=":r2:"
-            id=":r2:-label"
+            for=":r1:"
+            id=":r1:-label"
           >
             Numeric Field
           </label>
@@ -1493,7 +1493,7 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
             <input
               aria-invalid="false"
               class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedEnd css-13u80ox-MuiInputBase-input-MuiOutlinedInput-input"
-              id=":r2:"
+              id=":r1:"
               name="numeric-field"
               style="padding-right: 20px;"
               type="number"
@@ -1514,16 +1514,16 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
                 />
               </svg>
             </button>
             <fieldset
               aria-hidden="true"
-              class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+              class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                class="css-njhac4-MuiNotchedOutlined-root"
+                class="css-yjsfm1"
               >
                 <span>
                   Numeric Field
@@ -1543,10 +1543,10 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-p1xhd7-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1lj3yok-MuiFormLabel-root-MuiInputLabel-root"
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1t8z5a8-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink="false"
-              for=":r3:"
-              id=":r3:-label"
+              for=":r2:"
+              id=":r2:-label"
             >
               Multiple Filter Field
             </label>
@@ -1555,14 +1555,14 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
             >
               <input
                 aria-autocomplete="list"
-                aria-controls=":r3:-listbox"
+                aria-controls=":r2:-listbox"
                 aria-disabled="false"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-invalid="false"
                 autocomplete="off"
                 class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-j6moju-MuiInputBase-input-MuiOutlinedInput-input"
-                id=":r3:"
+                id=":r2:"
                 role="combobox"
                 type="text"
                 value=""
@@ -1584,17 +1584,17 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
                     viewBox="0 0 24 24"
                   >
                     <path
-                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"
+                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
                     />
                   </svg>
                 </button>
               </div>
               <fieldset
                 aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="css-njhac4-MuiNotchedOutlined-root"
+                  class="css-yjsfm1"
                 >
                   <span>
                     Multiple Filter Field
@@ -1607,7 +1607,7 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
         <div
           aria-atomic="true"
           aria-live="polite"
-          class="MuiBox-root css-ty8jgw"
+          class="MuiBox-root css-trfuzi"
           role="status"
         />
       </div>
@@ -1621,10 +1621,10 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
             class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-p1xhd7-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1lj3yok-MuiFormLabel-root-MuiInputLabel-root"
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1t8z5a8-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink="false"
-              for=":r5:"
-              id=":r5:-label"
+              for=":r4:"
+              id=":r4:-label"
             >
               Autocomplete Single Field
             </label>
@@ -1633,14 +1633,14 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
             >
               <input
                 aria-autocomplete="list"
-                aria-controls=":r5:-listbox"
+                aria-controls=":r4:-listbox"
                 aria-disabled="false"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-invalid="false"
                 autocomplete="off"
                 class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-j6moju-MuiInputBase-input-MuiOutlinedInput-input"
-                id=":r5:"
+                id=":r4:"
                 role="combobox"
                 type="text"
                 value=""
@@ -1662,17 +1662,17 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
                     viewBox="0 0 24 24"
                   >
                     <path
-                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"
+                      d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
                     />
                   </svg>
                 </button>
               </div>
               <fieldset
                 aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="css-njhac4-MuiNotchedOutlined-root"
+                  class="css-yjsfm1"
                 >
                   <span>
                     Autocomplete Single Field
@@ -1685,7 +1685,7 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
         <div
           aria-atomic="true"
           aria-live="polite"
-          class="MuiBox-root css-ty8jgw"
+          class="MuiBox-root css-trfuzi"
           role="status"
         />
       </div>

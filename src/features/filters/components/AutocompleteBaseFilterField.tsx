@@ -44,34 +44,6 @@ export const AutocompleteBaseFilterField = <Multiple extends boolean>(
     en: 'No results',
   })
 
-  function getSelectedElementsLabelText(): { label: string; ariaLabel: string } {
-    // If the filter has no submit button, or if it has a submit button but the value is empty, the label is just the field label
-    //  otherwise it shows the number of selected elements
-    if (!Array.isArray(value) || value.length === 0) {
-      return { label: fieldLabel, ariaLabel: fieldLabel }
-    }
-
-    const elementNumber = value.length
-
-    const label = getLocalizedValue({
-      it: `${fieldLabel} (${elementNumber})`,
-      en: `${fieldLabel} (${elementNumber})`,
-    })
-
-    const ariaLabel = getLocalizedValue({
-      it: `${fieldLabel} (${elementNumber} ${
-        elementNumber === 1 ? 'elemento selezionato' : 'elementi selezionati'
-      })`,
-      en: `${fieldLabel} (${elementNumber} ${
-        elementNumber === 1 ? 'element' : 'elements'
-      } selected)`,
-    })
-
-    return { label, ariaLabel }
-  }
-
-  const selectedElementsLabelText = getSelectedElementsLabelText()
-
   function handleAutocompleteChange(
     newValue: MIAutocompleteProps<FilterOption, Multiple>['value'] | undefined
   ) {
@@ -120,13 +92,14 @@ export const AutocompleteBaseFilterField = <Multiple extends boolean>(
     <MIAutocomplete<FilterOption, Multiple>
       {...autocompleteProps}
       options={[...options]}
-      label={selectedElementsLabelText.label}
+      label={fieldLabel}
       sx={sx as unknown as MuiSxProps}
       value={value as Multiple extends true ? FilterOption[] : FilterOption}
       getOptionLabel={(option) => option.label}
       onInputChange={(inputValue) => onInputChange?.(inputValue)}
       isOptionEqualToValue={(option, { value }) => option.value === value}
       noResultsText={noOptionsText}
+      showSelectionCountOnly={true}
       onKeyDown={(event) => {
         lastPressedKeyRef.current = event.key
         autocompleteProps.onKeyDown?.(event)
