@@ -69,16 +69,16 @@ exports[`Filters component > matches the snapshot with more than one active filt
               viewBox="0 0 24 24"
             >
               <path
-                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
               />
             </svg>
           </button>
           <fieldset
             aria-hidden={true}
-            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
           >
             <legend
-              className="css-yjsfm1"
+              className="css-njhac4-MuiNotchedOutlined-root"
             >
               <span>
                 Single Filter Field
@@ -155,16 +155,16 @@ exports[`Filters component > matches the snapshot with more than one active filt
               viewBox="0 0 24 24"
             >
               <path
-                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
               />
             </svg>
           </button>
           <fieldset
             aria-hidden={true}
-            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
           >
             <legend
-              className="css-yjsfm1"
+              className="css-njhac4-MuiNotchedOutlined-root"
             >
               <span>
                 Numeric Field
@@ -179,7 +179,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
     >
       <div
         aria-owns={null}
-        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1xnbq41-MuiAutocomplete-root"
+        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-jw1jwv-MuiAutocomplete-root"
         label="Multiple Filter Field"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -223,7 +223,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
               value=""
             />
             <div
-              className="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+              className="MuiAutocomplete-endAdornment css-p1olib-MuiAutocomplete-endAdornment"
             >
               <button
                 aria-label="Open"
@@ -261,10 +261,10 @@ exports[`Filters component > matches the snapshot with more than one active filt
             </div>
             <fieldset
               aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                className="css-yjsfm1"
+                className="css-njhac4-MuiNotchedOutlined-root"
               >
                 <span>
                   Multiple Filter Field
@@ -280,7 +280,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
     >
       <div
         aria-owns={null}
-        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1xnbq41-MuiAutocomplete-root"
+        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1y8r37a-MuiAutocomplete-root"
         label="Autocomplete Single Field"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -324,7 +324,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
               value=""
             />
             <div
-              className="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+              className="MuiAutocomplete-endAdornment css-p1olib-MuiAutocomplete-endAdornment"
             >
               <button
                 aria-label="Open"
@@ -362,10 +362,10 @@ exports[`Filters component > matches the snapshot with more than one active filt
             </div>
             <fieldset
               aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                className="css-yjsfm1"
+                className="css-njhac4-MuiNotchedOutlined-root"
               >
                 <span>
                   Autocomplete Single Field
@@ -387,7 +387,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
       className="MuiStack-root css-1xvxq01-MuiStack-root"
     >
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-38raov-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -422,7 +422,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         </svg>
       </div>
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-38raov-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -457,7 +457,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         </svg>
       </div>
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-38raov-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -495,7 +495,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         className="MuiStack-root css-omazcq-MuiStack-root"
       >
         <button
-          className="MuiButtonBase-root MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall css-wrzsdx-MuiButtonBase-root-MuiButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-colorPrimary MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-colorPrimary css-wrzsdx-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -590,16 +590,16 @@ exports[`Filters component > matches the snapshot with more than one active filt
               viewBox="0 0 24 24"
             >
               <path
-                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
               />
             </svg>
           </button>
           <fieldset
             aria-hidden={true}
-            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
           >
             <legend
-              className="css-yjsfm1"
+              className="css-njhac4-MuiNotchedOutlined-root"
             >
               <span>
                 Single Filter Field
@@ -676,16 +676,16 @@ exports[`Filters component > matches the snapshot with more than one active filt
               viewBox="0 0 24 24"
             >
               <path
-                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
               />
             </svg>
           </button>
           <fieldset
             aria-hidden={true}
-            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
           >
             <legend
-              className="css-yjsfm1"
+              className="css-njhac4-MuiNotchedOutlined-root"
             >
               <span>
                 Numeric Field
@@ -700,7 +700,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
     >
       <div
         aria-owns={null}
-        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1xnbq41-MuiAutocomplete-root"
+        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-jw1jwv-MuiAutocomplete-root"
         label="Multiple Filter Field"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -744,7 +744,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
               value=""
             />
             <div
-              className="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+              className="MuiAutocomplete-endAdornment css-p1olib-MuiAutocomplete-endAdornment"
             >
               <button
                 aria-label="Open"
@@ -782,10 +782,10 @@ exports[`Filters component > matches the snapshot with more than one active filt
             </div>
             <fieldset
               aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                className="css-yjsfm1"
+                className="css-njhac4-MuiNotchedOutlined-root"
               >
                 <span>
                   Multiple Filter Field
@@ -801,7 +801,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
     >
       <div
         aria-owns={null}
-        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1xnbq41-MuiAutocomplete-root"
+        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1y8r37a-MuiAutocomplete-root"
         label="Autocomplete Single Field"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -845,7 +845,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
               value=""
             />
             <div
-              className="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+              className="MuiAutocomplete-endAdornment css-p1olib-MuiAutocomplete-endAdornment"
             >
               <button
                 aria-label="Open"
@@ -883,10 +883,10 @@ exports[`Filters component > matches the snapshot with more than one active filt
             </div>
             <fieldset
               aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                className="css-yjsfm1"
+                className="css-njhac4-MuiNotchedOutlined-root"
               >
                 <span>
                   Autocomplete Single Field
@@ -908,7 +908,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
       className="MuiStack-root css-1xvxq01-MuiStack-root"
     >
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-38raov-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -943,7 +943,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         </svg>
       </div>
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-38raov-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -978,7 +978,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         </svg>
       </div>
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-38raov-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -1016,7 +1016,7 @@ exports[`Filters component > matches the snapshot with more than one active filt
         className="MuiStack-root css-omazcq-MuiStack-root"
       >
         <button
-          className="MuiButtonBase-root MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall css-wrzsdx-MuiButtonBase-root-MuiButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-colorPrimary MuiButton-root MuiButton-naked MuiButton-nakedPrimary MuiButton-sizeSmall MuiButton-nakedSizeSmall MuiButton-colorPrimary css-wrzsdx-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -1114,16 +1114,16 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
               />
             </svg>
           </button>
           <fieldset
             aria-hidden={true}
-            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
           >
             <legend
-              className="css-yjsfm1"
+              className="css-njhac4-MuiNotchedOutlined-root"
             >
               <span>
                 Single Filter Field
@@ -1200,16 +1200,16 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
               />
             </svg>
           </button>
           <fieldset
             aria-hidden={true}
-            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
           >
             <legend
-              className="css-yjsfm1"
+              className="css-njhac4-MuiNotchedOutlined-root"
             >
               <span>
                 Numeric Field
@@ -1224,7 +1224,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
     >
       <div
         aria-owns={null}
-        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1xnbq41-MuiAutocomplete-root"
+        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-jw1jwv-MuiAutocomplete-root"
         label="Multiple Filter Field"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -1268,7 +1268,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
               value=""
             />
             <div
-              className="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+              className="MuiAutocomplete-endAdornment css-p1olib-MuiAutocomplete-endAdornment"
             >
               <button
                 aria-label="Open"
@@ -1309,10 +1309,10 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
             </div>
             <fieldset
               aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                className="css-yjsfm1"
+                className="css-njhac4-MuiNotchedOutlined-root"
               >
                 <span>
                   Multiple Filter Field
@@ -1328,7 +1328,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
     >
       <div
         aria-owns={null}
-        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1xnbq41-MuiAutocomplete-root"
+        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1y8r37a-MuiAutocomplete-root"
         label="Autocomplete Single Field"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -1372,7 +1372,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
               value=""
             />
             <div
-              className="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+              className="MuiAutocomplete-endAdornment css-p1olib-MuiAutocomplete-endAdornment"
             >
               <button
                 aria-label="Open"
@@ -1413,10 +1413,10 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
             </div>
             <fieldset
               aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                className="css-yjsfm1"
+                className="css-njhac4-MuiNotchedOutlined-root"
               >
                 <span>
                   Autocomplete Single Field
@@ -1438,7 +1438,7 @@ exports[`Filters component > matches the snapshot with one active filter 1`] = `
       className="MuiStack-root css-1xvxq01-MuiStack-root"
     >
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-38raov-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -1546,16 +1546,16 @@ exports[`Filters component > matches the snapshot with one active filter and a r
               viewBox="0 0 24 24"
             >
               <path
-                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
               />
             </svg>
           </button>
           <fieldset
             aria-hidden={true}
-            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
           >
             <legend
-              className="css-yjsfm1"
+              className="css-njhac4-MuiNotchedOutlined-root"
             >
               <span>
                 Single Filter Field
@@ -1632,16 +1632,16 @@ exports[`Filters component > matches the snapshot with one active filter and a r
               viewBox="0 0 24 24"
             >
               <path
-                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
               />
             </svg>
           </button>
           <fieldset
             aria-hidden={true}
-            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
           >
             <legend
-              className="css-yjsfm1"
+              className="css-njhac4-MuiNotchedOutlined-root"
             >
               <span>
                 Numeric Field
@@ -1656,7 +1656,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
     >
       <div
         aria-owns={null}
-        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1xnbq41-MuiAutocomplete-root"
+        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-jw1jwv-MuiAutocomplete-root"
         label="Multiple Filter Field"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -1700,7 +1700,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
               value=""
             />
             <div
-              className="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+              className="MuiAutocomplete-endAdornment css-p1olib-MuiAutocomplete-endAdornment"
             >
               <button
                 aria-label="Open"
@@ -1741,10 +1741,10 @@ exports[`Filters component > matches the snapshot with one active filter and a r
             </div>
             <fieldset
               aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                className="css-yjsfm1"
+                className="css-njhac4-MuiNotchedOutlined-root"
               >
                 <span>
                   Multiple Filter Field
@@ -1760,7 +1760,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
     >
       <div
         aria-owns={null}
-        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1xnbq41-MuiAutocomplete-root"
+        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1y8r37a-MuiAutocomplete-root"
         label="Autocomplete Single Field"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -1804,7 +1804,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
               value=""
             />
             <div
-              className="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+              className="MuiAutocomplete-endAdornment css-p1olib-MuiAutocomplete-endAdornment"
             >
               <button
                 aria-label="Open"
@@ -1845,10 +1845,10 @@ exports[`Filters component > matches the snapshot with one active filter and a r
             </div>
             <fieldset
               aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                className="css-yjsfm1"
+                className="css-njhac4-MuiNotchedOutlined-root"
               >
                 <span>
                   Autocomplete Single Field
@@ -1870,7 +1870,7 @@ exports[`Filters component > matches the snapshot with one active filter and a r
       className="MuiStack-root css-1xvxq01-MuiStack-root"
     >
       <div
-        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-1mywu95-MuiButtonBase-root-MuiChip-root"
+        className="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-38raov-MuiButtonBase-root-MuiChip-root"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -1981,16 +1981,16 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
               />
             </svg>
           </button>
           <fieldset
             aria-hidden={true}
-            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
           >
             <legend
-              className="css-yjsfm1"
+              className="css-njhac4-MuiNotchedOutlined-root"
             >
               <span>
                 Single Filter Field
@@ -2067,16 +2067,16 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"
               />
             </svg>
           </button>
           <fieldset
             aria-hidden={true}
-            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
           >
             <legend
-              className="css-yjsfm1"
+              className="css-njhac4-MuiNotchedOutlined-root"
             >
               <span>
                 Numeric Field
@@ -2091,7 +2091,7 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
     >
       <div
         aria-owns={null}
-        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1xnbq41-MuiAutocomplete-root"
+        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-jw1jwv-MuiAutocomplete-root"
         label="Multiple Filter Field"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -2135,7 +2135,7 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
               value=""
             />
             <div
-              className="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+              className="MuiAutocomplete-endAdornment css-p1olib-MuiAutocomplete-endAdornment"
             >
               <button
                 aria-label="Open"
@@ -2173,10 +2173,10 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
             </div>
             <fieldset
               aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                className="css-yjsfm1"
+                className="css-njhac4-MuiNotchedOutlined-root"
               >
                 <span>
                   Multiple Filter Field
@@ -2192,7 +2192,7 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
     >
       <div
         aria-owns={null}
-        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1xnbq41-MuiAutocomplete-root"
+        className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1y8r37a-MuiAutocomplete-root"
         label="Autocomplete Single Field"
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -2236,7 +2236,7 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
               value=""
             />
             <div
-              className="MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"
+              className="MuiAutocomplete-endAdornment css-p1olib-MuiAutocomplete-endAdornment"
             >
               <button
                 aria-label="Open"
@@ -2274,10 +2274,10 @@ exports[`Filters component > matches the snapshot without active filters 1`] = `
             </div>
             <fieldset
               aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              className="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
             >
               <legend
-                className="css-yjsfm1"
+                className="css-njhac4-MuiNotchedOutlined-root"
               >
                 <span>
                   Autocomplete Single Field

@@ -1,8 +1,9 @@
 import React from 'react'
 import { generateTestingRoutes, renderRoutes } from './common.mocks'
 import { createMemoryHistory } from 'history'
+import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { expectTypeOf } from 'vitest'
+import { expectTypeOf, vi } from 'vitest'
 
 const {
   routes,
@@ -61,25 +62,23 @@ describe('Breadcrumbs', () => {
   })
 
   it('should navigate to the correct route when clicking on a breadcrumb link', async () => {
-    const { getByRole, history } = renderBreadcrumb()
+    const { getByRole, getByText, history } = renderBreadcrumb()
     const page1Link = getByRole('link', { name: 'page-1' })
     const user = userEvent.setup()
     await user.click(page1Link)
     expect(history.location.pathname).toEqual('/page-1')
-    const homeLink = getByRole('link', { name: 'home' })
-    await user.click(homeLink)
-    expect(history.location.pathname).toEqual('/')
+    expect(getByText('home')).toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: 'home' })).not.toBeInTheDocument()
   })
 
   it('should navigate to the correct route when clicking on a breadcrumb link (localized)', async () => {
-    const { getByRole, history } = renderLocalizedBreadcrumb()
+    const { getByRole, getByText, history } = renderLocalizedBreadcrumb()
     const page1Link = getByRole('link', { name: 'page-1' })
     const user = userEvent.setup()
     await user.click(page1Link)
     expect(history.location.pathname).toEqual('/it/page-1')
-    const homeLink = getByRole('link', { name: 'home' })
-    await user.click(homeLink)
-    expect(history.location.pathname).toEqual('/it/')
+    expect(getByText('home')).toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: 'home' })).not.toBeInTheDocument()
   })
 
   it('should have the correct routeLabels type', () => {

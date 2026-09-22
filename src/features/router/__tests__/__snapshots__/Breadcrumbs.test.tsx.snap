@@ -3,48 +3,36 @@
 exports[`Breadcrumbs > should match the snapshot (localized) 1`] = `
 <body>
   <div>
-    <nav
-      class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-5jrdvz-MuiTypography-root-MuiBreadcrumbs-root"
-    >
-      <ol
-        class="MuiBreadcrumbs-ol css-4pdmu4-MuiBreadcrumbs-ol"
-      >
-        <li
-          class="MuiBreadcrumbs-li"
-        >
-          <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-159dm8u-MuiTypography-root-MuiLink-root"
-            href="/it/"
+    <nav>
+      <ol>
+        <li>
+          <span
+            aria-current="page"
           >
             home
-          </a>
+          </span>
         </li>
         <li
           aria-hidden="true"
-          class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
         >
           /
         </li>
-        <li
-          class="MuiBreadcrumbs-li"
-        >
+        <li>
           <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-159dm8u-MuiTypography-root-MuiLink-root"
-            href="/it/page-1"
+            href="#"
           >
             page-1
           </a>
         </li>
         <li
           aria-hidden="true"
-          class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
         >
           /
         </li>
-        <li
-          class="MuiBreadcrumbs-li"
-        >
-          <span>
+        <li>
+          <span
+            aria-current="page"
+          >
             dynamic-page-1
           </span>
         </li>
@@ -57,48 +45,36 @@ exports[`Breadcrumbs > should match the snapshot (localized) 1`] = `
 exports[`Breadcrumbs > should match the snapshot 1`] = `
 <body>
   <div>
-    <nav
-      class="MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-5jrdvz-MuiTypography-root-MuiBreadcrumbs-root"
-    >
-      <ol
-        class="MuiBreadcrumbs-ol css-4pdmu4-MuiBreadcrumbs-ol"
-      >
-        <li
-          class="MuiBreadcrumbs-li"
-        >
-          <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-159dm8u-MuiTypography-root-MuiLink-root"
-            href="/"
+    <nav>
+      <ol>
+        <li>
+          <span
+            aria-current="page"
           >
             home
-          </a>
+          </span>
         </li>
         <li
           aria-hidden="true"
-          class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
         >
           /
         </li>
-        <li
-          class="MuiBreadcrumbs-li"
-        >
+        <li>
           <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-159dm8u-MuiTypography-root-MuiLink-root"
-            href="/page-1"
+            href="#"
           >
             page-1
           </a>
         </li>
         <li
           aria-hidden="true"
-          class="MuiBreadcrumbs-separator css-1wuw8dw-MuiBreadcrumbs-separator"
         >
           /
         </li>
-        <li
-          class="MuiBreadcrumbs-li"
-        >
-          <span>
+        <li>
+          <span
+            aria-current="page"
+          >
             dynamic-page-1
           </span>
         </li>
