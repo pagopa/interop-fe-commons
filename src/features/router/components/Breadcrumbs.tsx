@@ -1,13 +1,13 @@
 import React from 'react'
 import type { Routes, RoutesBuilderConfig } from '../router.types'
-import { Breadcrumbs as MUIBreadcrumbs, Link as MUILink } from '@mui/material'
+import { MIBreadcrumbItem, MIBreadcrumbs } from '@pagopa/mui-italia'
 import {
   getRouteKeyFromPath,
   prefixPathnameWithLang,
   removeLanguageSubpathFromPathname,
   splitPath,
 } from '../router.utils'
-import { useLocation, useParams, Link as RRDLink } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 export function generateBreadcrumbs<
@@ -23,6 +23,7 @@ export function generateBreadcrumbs<
   return function Breadcrumbs({ routeLabels }: BreadcrumbProps) {
     const params = useParams()
     const location = useLocation()
+    const navigate = useNavigate()
     const { i18n } = useTranslation()
     const currentLang = hasLanguages ? i18n.language : undefined
 
@@ -62,18 +63,20 @@ export function generateBreadcrumbs<
     }
 
     return (
-      <MUIBreadcrumbs sx={{ mb: 1 }}>
+      <MIBreadcrumbs sx={{ mb: 1 }}>
         {breadcrumbSegments.map(({ label, path }, i) => {
-          if (i === breadcrumbSegments.length - 1) {
-            return <span key={i}>{label}</span>
-          }
+          // Don't click on first or last breadcrumb items, it's useless
+          const isClickable = i !== 0 && i !== breadcrumbSegments.length - 1
+
           return (
-            <MUILink component={RRDLink} key={i} to={path} sx={{ fontWeight: 700 }} color="inherit">
-              {label}
-            </MUILink>
+            <MIBreadcrumbItem
+              key={i}
+              label={String(label)}
+              {...(isClickable ? { onClick: () => navigate(path) } : { current: true })}
+            />
           )
         })}
-      </MUIBreadcrumbs>
+      </MIBreadcrumbs>
     )
   }
 }
