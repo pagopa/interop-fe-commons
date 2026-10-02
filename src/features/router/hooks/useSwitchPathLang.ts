@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import type { RoutesBuilderConfig } from '../router.types'
 
 export function generateUseSwitchPathLang<T extends string>(config?: RoutesBuilderConfig) {
-  const languages = config?.languages
+  const configLanguages = config?.languages
 
   return function useSwitchPathLang() {
     const location = useLocation()
@@ -12,32 +12,37 @@ export function generateUseSwitchPathLang<T extends string>(config?: RoutesBuild
     const switchPathLang = React.useCallback(
       (toLang: T) => {
         const path = location.pathname
-        const firstBit = path.split('/')[1]
+        const segments = path.split('/')
+        const firstBit = segments[1]
+        const urlParams = new URLSearchParams(location.search)
 
-        if (!languages) {
-          throw new Error(
-            'useSwitchPathLang requires languages to be defined in generateRoutes config'
-          )
+        if (!configLanguages) {
+          throw new Error('useSwitchPathLang requires languages to be defined')
         }
 
-        if (!languages.includes(firstBit)) {
-          console.warn(`useSwitchPathLang: path "${path}" does not start with a language code.`)
+        if (!configLanguages.includes(firstBit)) {
+          console.warn(
+            `useSwitchPathLang: path "${path}" does not start with a language accepted from our initial configuration.`
+          )
           return
         }
 
-        let newPath = path.replace(`/${firstBit}/`, `/${toLang}/`)
+        urlParams.delete('lang')
 
-        if (location.search) {
-          newPath += location.search
-        }
+        const newPathname = path.replace(`/${firstBit}/`, `/${toLang}/`)
 
-        if (location.hash) {
-          newPath += location.hash
-        }
-
-        navigate(newPath, { replace: true })
+        const newSearch = urlParams.toString()
+        const searchPrefix = newSearch ? `?${newSearch}` : ''
+        navigate(
+          {
+            pathname: newPathname,
+            search: searchPrefix,
+            hash: location.hash,
+          },
+          { replace: true }
+        )
       },
-      [location.hash, location.search, location.pathname, navigate]
+      [location, navigate]
     )
 
     return switchPathLang

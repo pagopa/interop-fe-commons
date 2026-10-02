@@ -53,12 +53,6 @@ export function initTracking<TMixPanelEvent extends MixPanelEvent>(
   useTrackPageViewEvent: UseTrackPageViewEvent<TMixPanelEvent>
 
   /**
-   * Sets the Mixpanel identifier
-   * @param identifier the identifier to set
-   */
-  setMixpanelIdentifier: (identifier: string) => void
-
-  /**
    * Resets Mixpanel
    */
   resetMixpanel: () => void
@@ -68,7 +62,6 @@ export function initTracking<TMixPanelEvent extends MixPanelEvent>(
     return {
       trackEvent: noop,
       useTrackPageViewEvent: noop,
-      setMixpanelIdentifier: noop,
       resetMixpanel: noop,
     }
   }
@@ -82,17 +75,16 @@ export function initTracking<TMixPanelEvent extends MixPanelEvent>(
 
   let didMixpanelInit = false
   const didmixpanelInitListeners: Set<() => void> = new Set()
-  let mixpanelIdentifier: string | undefined
 
-  function setMixpanelIdentifier(identifier: string) {
-    // If Mixpanel is already initialized, identify the user
-    if (didMixpanelInit) {
-      mixpanel.identify(identifier)
-      return
-    }
-    // ... otherwise, store the identifier to identify the user when Mixpanel is initialized
-    mixpanelIdentifier = identifier
-  }
+  // function setMixpanelIdentifier(identifier: string) {
+  //   // If Mixpanel is already initialized, identify the user
+  //   if (didMixpanelInit) {
+  //     mixpanel.identify(identifier)
+  //     return
+  //   }
+  //   // ... otherwise, store the identifier to identify the user when Mixpanel is initialized
+  //   mixpanelIdentifier = identifier
+  // }
 
   function resetMixpanel() {
     if (didMixpanelInit) {
@@ -119,7 +111,7 @@ export function initTracking<TMixPanelEvent extends MixPanelEvent>(
   function handleMixpanelInit() {
     const doesCookieCheckPass = config.hasOnlyStrictlyNecessaryCookies || areCookiesAccepted()
     if (doesCookieCheckPass && !didMixpanelInit) {
-      mixpanelInit(config.mixpanelToken, mixpanelIdentifier, config?.mixpanelConfig)
+      mixpanelInit(config.mixpanelToken, config?.mixpanelConfig)
       emitMixpanelInitialized()
     }
   }
@@ -133,6 +125,7 @@ export function initTracking<TMixPanelEvent extends MixPanelEvent>(
 
   const trackEvent: TrackEvent<TMixPanelEvent> = (eventName, ...properties) => {
     if (!didMixpanelInit) return
+
     const defaultProperties = config.getDefaultProps?.() ?? {}
     mixpanel.track(eventName, { ...properties[0], ...defaultProperties })
   }
@@ -167,7 +160,6 @@ export function initTracking<TMixPanelEvent extends MixPanelEvent>(
   return {
     trackEvent,
     useTrackPageViewEvent,
-    setMixpanelIdentifier,
     resetMixpanel,
   }
 }
