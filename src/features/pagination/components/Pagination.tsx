@@ -10,7 +10,7 @@ import {
 } from '@mui/material'
 import type { InteropTheme } from '@/theme'
 
-const defaultOptions = [10, 24, 36]
+const defaultOptions = [12, 24, 36]
 export interface PaginationProps extends StackProps {
   totalPages: number
   pageNum: number
@@ -56,7 +56,7 @@ export const Pagination: React.FC<PaginationProps> = ({
       alignItems="center"
       {...stackProps}
     >
-      {rowPerPageOptions && (
+      {rowPerPageOptions && totalPages > 0 && (
         <Select
           size="small"
           labelId="rows-per-page-select"
