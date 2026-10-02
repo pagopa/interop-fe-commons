@@ -50,7 +50,9 @@ describe('Pagination component', () => {
     it('Should be available [10,24,36] as rows per page as default options', async () => {
       const screen = render(<PaginationExample withRowsPerPage />)
       const selectElement = screen.getByTestId('rows-per-page-select')
-      const selectButton = within(selectElement).getByRole('button')
+      const selectButton = within(selectElement).getByRole('button', {
+        name: 'Select number of rows per page',
+      })
 
       expect(selectElement).toBeDefined()
       await userEvent.click(selectButton)
