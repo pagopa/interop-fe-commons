@@ -8,7 +8,7 @@ exports[`InformationContainer component > Render correctly with JSX as content 1
     className="MuiBox-root css-iuqs4u"
   >
     <p
-      className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+      className="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
     >
       test-title
     </p>
@@ -47,7 +47,7 @@ exports[`InformationContainer component > Render correctly with column direction
     className="MuiBox-root css-1pdb85g"
   >
     <p
-      className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+      className="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
     >
       test-title
     </p>
@@ -76,7 +76,7 @@ exports[`InformationContainer component > Render correctly with content as tring
     className="MuiBox-root css-iuqs4u"
   >
     <p
-      className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+      className="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
     >
       test-title
     </p>
@@ -113,7 +113,7 @@ exports[`InformationContainer component > Render correctly with copy to clipboar
     className="MuiBox-root css-iuqs4u"
   >
     <p
-      className="MuiTypography-root MuiTypography-body2 css-1xwhmis-MuiTypography-root"
+      className="MuiTypography-root MuiTypography-body2 css-1i1l7u0-MuiTypography-root"
     >
       test-title
     </p>
@@ -181,7 +181,7 @@ exports[`InformationContainer component > Renders correctly 1`] = `
     className="MuiBox-root css-iuqs4u"
   >
     <p
-      className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+      className="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
     >
       test-title
     </p>
