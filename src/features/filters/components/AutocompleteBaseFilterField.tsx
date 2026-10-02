@@ -1,6 +1,9 @@
 import React from 'react'
-import type { AutocompleteProps } from '@mui/material'
-import { Autocomplete, Paper, TextField } from '@mui/material'
+import type { AutocompleteProps, SxProps as MuiSxProps } from '@mui/material'
+import {
+  Autocomplete as MIAutocomplete,
+  type AutocompleteProps as MIAutocompleteProps,
+} from '@pagopa/mui-italia'
 import { getLocalizedValue } from '../../../utils/common.utils'
 import type { FilterOption } from '../filters.types'
 
@@ -19,35 +22,90 @@ type AutocompleteBaseFilterFieldProps<Multiple extends boolean> = Omit<
 export const AutocompleteBaseFilterField = <Multiple extends boolean>(
   props: AutocompleteBaseFilterFieldProps<Multiple>
 ) => {
+  const lastPressedKeyRef = React.useRef<string | null>(null)
+
+  const {
+    label: fieldLabel,
+    onInputChange,
+    onChange,
+    renderOption,
+    options,
+    value,
+    sx,
+    slotProps: _slotProps,
+    defaultValue: _defaultValue,
+    blurOnSelect: _blurOnSelect,
+    disableCloseOnSelect: _disableCloseOnSelect,
+    ...autocompleteProps
+  } = props
+
   const noOptionsText = getLocalizedValue({
     it: 'Nessun risultato trovato',
     en: 'No results',
   })
 
+  function handleAutocompleteChange(
+    newValue: MIAutocompleteProps<FilterOption, Multiple>['value'] | undefined
+  ) {
+    if (newValue === undefined) {
+      return
+    }
+
+    // Avoid default behaviour of filters being removed on backspace press.
+    if (
+      lastPressedKeyRef.current === 'Backspace' &&
+      Array.isArray(value) &&
+      Array.isArray(newValue) &&
+      newValue.length < value.length
+    ) {
+      lastPressedKeyRef.current = null
+      return
+    }
+
+    lastPressedKeyRef.current = null
+
+    onChange?.(
+      { type: 'change' } as React.SyntheticEvent,
+      newValue as NonNullable<AutocompleteProps<FilterOption, Multiple, true, false>['value']>,
+      'selectOption'
+    )
+  }
+
+  function renderAutocompleteOption(option: FilterOption) {
+    if (!renderOption) {
+      return null
+    }
+
+    const isSelected = Array.isArray(value)
+      ? value.some((selectedOption) => selectedOption.value === option.value)
+      : value?.value === option.value
+
+    return renderOption(
+      { key: option.value } as React.HTMLAttributes<HTMLLIElement> & { key: string },
+      option,
+      { selected: isSelected, inputValue: '', index: 0 },
+      {} as never
+    )
+  }
+
   return (
-    <Autocomplete<FilterOption, Multiple, true, false>
-      {...props}
-      onInputChange={(_, value) => props?.onInputChange?.(value)}
+    <MIAutocomplete<FilterOption, Multiple>
+      {...autocompleteProps}
+      options={[...options]}
+      label={fieldLabel}
+      sx={sx as unknown as MuiSxProps}
+      value={value as Multiple extends true ? FilterOption[] : FilterOption}
+      getOptionLabel={(option) => option.label}
+      onInputChange={(inputValue) => onInputChange?.(inputValue)}
       isOptionEqualToValue={(option, { value }) => option.value === value}
-      noOptionsText={noOptionsText}
-      disableClearable
-      renderTags={() => null}
-      PaperComponent={({ children }) => <Paper elevation={4}>{children}</Paper>}
-      size="small"
-      onChange={(event, data, reason) => {
-        // Avoids default behaviour of filters being removed on backspace press
-        if (
-          event.type === 'keydown' &&
-          (event as React.KeyboardEvent).key === 'Backspace' &&
-          reason === 'removeOption'
-        ) {
-          return
-        }
-        props.onChange?.(event, data, reason)
+      noResultsText={noOptionsText}
+      showSelectionCountOnly={true}
+      onKeyDown={(event) => {
+        lastPressedKeyRef.current = event.key
+        autocompleteProps.onKeyDown?.(event)
       }}
-      renderInput={(params) => {
-        return <TextField variant="outlined" {...params} label={props.label} />
-      }}
+      onChange={handleAutocompleteChange}
+      renderOption={renderOption ? renderAutocompleteOption : undefined}
     />
   )
 }

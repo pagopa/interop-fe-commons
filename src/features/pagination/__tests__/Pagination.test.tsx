@@ -30,9 +30,7 @@ describe('Pagination component', () => {
 
     it('If user click on page 5, page 5 should be selected', async () => {
       const screen = render(<PaginationExample />)
-      const pageButton = screen.getByRole('button', {
-        name: 'Go to page 5',
-      })
+      const pageButton = screen.getByRole('button', { name: 'Go to page 5' })
 
       expect(pageButton).not.toBeNull()
       await userEvent.click(pageButton, { delay: 2 })

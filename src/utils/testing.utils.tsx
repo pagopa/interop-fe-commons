@@ -2,6 +2,9 @@ import React from 'react'
 import { createMemoryHistory, type History } from 'history'
 import { Route, Router, Routes } from 'react-router-dom'
 import { render } from '@testing-library/react'
+import { ThemeProvider } from '@mui/material'
+import { theme as MUIITaliaTheme } from '@pagopa/mui-italia'
+// import { theme } from '@/theme'
 
 interface TestingRouterWrapper {
   children: React.ReactNode
@@ -15,11 +18,13 @@ export const TestingRouterWrapper: React.FC<TestingRouterWrapper> = ({
   const history = _history ?? createMemoryHistory()
 
   return (
-    <Router location={history.location} navigator={history}>
-      <Routes>
-        <Route path="*" element={children} />
-      </Routes>
-    </Router>
+    <ThemeProvider theme={MUIITaliaTheme}>
+      <Router location={history.location} navigator={history}>
+        <Routes>
+          <Route path="*" element={children} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   )
 }
 
