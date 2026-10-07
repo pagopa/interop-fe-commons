@@ -1,10 +1,9 @@
 import React from 'react'
 import type { ActiveFilters, FilterFields } from '@/features/filters/filters.types'
-import renderer from 'react-test-renderer'
 import { vi } from 'vitest'
 import userEvent from '@testing-library/user-event'
 import { fireEvent } from '@testing-library/react'
-import { renderWithRouter, TestingRouterWrapper } from '@/utils/testing.utils'
+import { renderWithRouter } from '@/utils/testing.utils'
 import { Filters } from '../components/Filters'
 
 const onTextInputChangeFn = vi.fn()
@@ -51,91 +50,91 @@ const activeFiltersMocks: ActiveFilters = [
 ]
 
 describe('Filters component', () => {
-  it('matches the snapshot without active filters', () => {
-    const tree = renderer
-      .create(
-        <TestingRouterWrapper>
-          <Filters
-            fields={fieldMocks}
-            activeFilters={[]}
-            onChangeActiveFilter={vi.fn()}
-            onRemoveActiveFilter={vi.fn()}
-            onResetActiveFilters={vi.fn()}
-          />
-        </TestingRouterWrapper>
-      )
-      .toJSON()
-    expect(tree).toMatchSnapshot()
+  it('renders fields without active filters', () => {
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={[]}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+      />
+    )
+
+    expect(screen.getByLabelText('Single Filter Field')).toBeInTheDocument()
+    expect(screen.getByLabelText('Numeric Field')).toBeInTheDocument()
+    expect(screen.getByLabelText('Multiple Filter Field')).toBeInTheDocument()
+    expect(screen.getByLabelText('Autocomplete Single Field')).toBeInTheDocument()
+    expect(screen.queryByText('Option1')).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Annulla filtri' })).not.toBeInTheDocument()
   })
 
-  it('matches the snapshot with one active filter', () => {
-    const tree = renderer
-      .create(
-        <TestingRouterWrapper>
-          <Filters
-            fields={fieldMocks}
-            activeFilters={[activeFiltersMocks[0]]}
-            onChangeActiveFilter={vi.fn()}
-            onRemoveActiveFilter={vi.fn()}
-            onResetActiveFilters={vi.fn()}
-          />
-        </TestingRouterWrapper>
-      )
-      .toJSON()
-    expect(tree).toMatchSnapshot()
+  it('renders one active filter chip', () => {
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={[activeFiltersMocks[0]]}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+      />
+    )
+
+    expect(screen.getByText('Option1')).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Annulla filtri' })).not.toBeInTheDocument()
   })
 
-  it('matches the snapshot with more than one active filters', () => {
-    const tree = renderer
-      .create(
-        <TestingRouterWrapper>
-          <Filters
-            fields={fieldMocks}
-            activeFilters={activeFiltersMocks}
-            onChangeActiveFilter={vi.fn()}
-            onRemoveActiveFilter={vi.fn()}
-            onResetActiveFilters={vi.fn()}
-          />
-        </TestingRouterWrapper>
-      )
-      .toJSON()
-    expect(tree).toMatchSnapshot()
+  it('renders multiple active filter chips and clear button', () => {
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={activeFiltersMocks}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+      />
+    )
+
+    expect(screen.getByText('Option1')).toBeInTheDocument()
+    expect(screen.getByText('Option2')).toBeInTheDocument()
+    expect(screen.getByText('Test')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Annulla filtri' })).toBeInTheDocument()
   })
 
-  it('matches the snapshot with one active filter and a right content', () => {
-    const tree = renderer
-      .create(
-        <TestingRouterWrapper>
-          <Filters
-            fields={fieldMocks}
-            activeFilters={[activeFiltersMocks[0]]}
-            onChangeActiveFilter={vi.fn()}
-            onRemoveActiveFilter={vi.fn()}
-            onResetActiveFilters={vi.fn()}
-            rightContent={<div>Right Content</div>}
-          />
-        </TestingRouterWrapper>
-      )
-      .toJSON()
-    expect(tree).toMatchSnapshot()
+  it('renders one active filter chip with right content', () => {
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={[activeFiltersMocks[0]]}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+        rightContent={<div>Right Content</div>}
+      />
+    )
+
+    expect(screen.getByText('Option1')).toBeInTheDocument()
+    expect(screen.getByText('Right Content')).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Annulla filtri' })).not.toBeInTheDocument()
   })
 
-  it('matches the snapshot with more than one active filters and right content', () => {
-    const tree = renderer
-      .create(
-        <TestingRouterWrapper>
-          <Filters
-            fields={fieldMocks}
-            activeFilters={activeFiltersMocks}
-            onChangeActiveFilter={vi.fn()}
-            onRemoveActiveFilter={vi.fn()}
-            onResetActiveFilters={vi.fn()}
-            rightContent={<div>Right Content</div>}
-          />
-        </TestingRouterWrapper>
-      )
-      .toJSON()
-    expect(tree).toMatchSnapshot()
+  it('renders multiple active filter chips with right content and clear button', () => {
+    const screen = renderWithRouter(
+      <Filters
+        fields={fieldMocks}
+        activeFilters={activeFiltersMocks}
+        onChangeActiveFilter={vi.fn()}
+        onRemoveActiveFilter={vi.fn()}
+        onResetActiveFilters={vi.fn()}
+        rightContent={<div>Right Content</div>}
+      />
+    )
+
+    expect(screen.getByText('Option1')).toBeInTheDocument()
+    expect(screen.getByText('Option2')).toBeInTheDocument()
+    expect(screen.getByText('Test')).toBeInTheDocument()
+    expect(screen.getByText('Right Content')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Annulla filtri' })).toBeInTheDocument()
   })
 
   it('should correctly add a filter using single filter field', async () => {
@@ -182,14 +181,8 @@ describe('Filters component', () => {
     fireEvent.click(option2)
     vi.advanceTimersByTime(400)
     expect(onChangeActiveFilterFn).toBeCalledWith('autocomplete-multiple', 'multiple-field', [
-      {
-        label: 'Option1',
-        value: 'option-1',
-      },
-      {
-        label: 'Option2',
-        value: 'option-2',
-      },
+      { label: 'Option1', value: 'option-1' },
+      { label: 'Option2', value: 'option-2' },
     ])
     vi.useRealTimers()
   })

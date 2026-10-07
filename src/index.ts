@@ -1,3 +1,4 @@
+export { generateBreadcrumbs } from './features/router/components/Breadcrumbs'
 export * from './features'
 export * from './theme'
 export * from './hooks'
