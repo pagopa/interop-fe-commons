@@ -57,7 +57,6 @@ export function initTracking<TMixPanelEvent extends MixPanelEvent>(
    */
   resetMixpanel: () => void
 } {
-  console.log('mixPanel configuration: ', config)
   // If tracking is disabled, return noop functions
   if (!config.enabled || typeof window === 'undefined') {
     return {
@@ -76,8 +75,6 @@ export function initTracking<TMixPanelEvent extends MixPanelEvent>(
 
   let didMixpanelInit = false
   const didmixpanelInitListeners: Set<() => void> = new Set()
-
-  console.log('didMixpanelInit: ', didMixpanelInit)
 
   // function setMixpanelIdentifier(identifier: string) {
   //   // If Mixpanel is already initialized, identify the user
@@ -112,9 +109,7 @@ export function initTracking<TMixPanelEvent extends MixPanelEvent>(
   }
 
   function handleMixpanelInit() {
-    console.log('handling Mixpanel init, checking cookie consent...')
     const doesCookieCheckPass = config.hasOnlyStrictlyNecessaryCookies || areCookiesAccepted()
-    console.log('doesCookieCheckPass: ', doesCookieCheckPass)
     if (doesCookieCheckPass && !didMixpanelInit) {
       mixpanelInit(config.mixpanelToken, config?.mixpanelConfig)
       emitMixpanelInitialized()
@@ -131,7 +126,6 @@ export function initTracking<TMixPanelEvent extends MixPanelEvent>(
   const trackEvent: TrackEvent<TMixPanelEvent> = (eventName, ...properties) => {
     if (!didMixpanelInit) return
 
-    console.log('Tracking event...: ', eventName, properties)
     const defaultProperties = config.getDefaultProps?.() ?? {}
     mixpanel.track(eventName, { ...properties[0], ...defaultProperties })
   }
