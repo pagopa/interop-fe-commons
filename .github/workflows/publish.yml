@@ -25,7 +25,7 @@ jobs:
       - run: npm ci
       - run: npm run test
       - run: npm run build
-      - run: npm publish --access public
+      - run: npm publish --provenance --access public --tag latest
 
   publish-rc:
     if: github.event_name == 'workflow_dispatch' && github.ref != 'refs/heads/main' && contains(format(',{0},', vars.AUTHORIZED_RC_PUBLISHERS), format(',{0},', github.actor))
@@ -47,4 +47,4 @@ jobs:
             echo "RC publish requires version format 1.2.3-RC1. Current version: $VERSION"
             exit 1
           fi
-          npm publish --access public --tag rc
+          npm publish --provenance --access public --tag rc
