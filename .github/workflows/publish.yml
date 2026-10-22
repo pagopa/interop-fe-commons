@@ -2,7 +2,6 @@ name: Publish
 
 # Controls when the workflow will run
 on:
-  workflow_dispatch:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: ['main']
@@ -21,8 +20,8 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4
         with:
-          node-version: "24"
-          registry-url: "https://registry.npmjs.org"
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
           package-manager-cache: false
       - run: npm ci
       - run: npm run test
@@ -38,8 +37,8 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4
         with:
-          node-version: "24"
-          registry-url: "https://registry.npmjs.org"
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
           package-manager-cache: false
       - run: npm ci
       - run: npm run test
