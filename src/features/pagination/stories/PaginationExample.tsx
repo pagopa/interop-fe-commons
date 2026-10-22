@@ -1,7 +1,7 @@
 import React from 'react'
 import { Pagination, usePagination } from '../..'
 import { Box, Button, Container, Stack, Typography } from '@mui/material'
-import { RouterProvider, createBrowserRouter, useLocation } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { CodeBlock } from '@/components'
 
 export const _PaginationExample: React.FC<{ withRowsPerPage?: boolean }> = ({
@@ -13,7 +13,6 @@ export const _PaginationExample: React.FC<{ withRowsPerPage?: boolean }> = ({
   const totalPages = getTotalPageCount(100)
 
   const { onLimitChange, ...restPaginationProps } = paginationProps
-
   const rowsPerPageProps = withRowsPerPage
     ? {
         onLimitChange: onLimitChange,
@@ -60,12 +59,12 @@ export const _PaginationExample: React.FC<{ withRowsPerPage?: boolean }> = ({
   )
 }
 
-const router = createBrowserRouter([{ path: '*', element: <_PaginationExample /> }])
-
-const routerPaginationWithoutRowsPerPage = createBrowserRouter([
-  { path: '*', element: <_PaginationExample withRowsPerPage /> },
-])
-
 export const PaginationExample: React.FC<{ withRowsPerPage?: boolean }> = ({ withRowsPerPage }) => {
-  return <RouterProvider router={withRowsPerPage ? routerPaginationWithoutRowsPerPage : router} />
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<_PaginationExample withRowsPerPage={withRowsPerPage} />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }

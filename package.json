@@ -2,6 +2,9 @@
   "name": "@pagopa/interop-fe-commons",
   "version": "1.5.4",
   "description": "",
+  "repository": {
+    "url": "https://github.com/pagopa/interop-fe-commons"
+  },
   "scripts": {
     "lint": "tsc",
     "build": "vite build",
