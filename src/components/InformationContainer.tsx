@@ -37,7 +37,11 @@ export function InformationContainer({
       {...props}
     >
       <Box sx={{ flexShrink: 0, maxWidth: direction === 'column' ? 'none' : '200px', flex: 1 }}>
-        <Typography sx={{ mt: copyToClipboard ? 1 : undefined }} variant="body2">
+        <Typography
+          sx={{ mt: copyToClipboard ? 1 : undefined }}
+          variant="body2"
+          color={'text.secondary'}
+        >
           {label}
         </Typography>
         {labelDescription && (
