@@ -36,7 +36,9 @@ export const Pagination: React.FC<PaginationProps> = ({
   rowPerPageOptions,
   ...stackProps
 }) => {
-  const pageOptionsValues = rowPerPageOptions?.options || defaultOptions
+  const pageOptionsValues = rowPerPageOptions?.options?.length
+    ? rowPerPageOptions.options
+    : defaultOptions
   const limit = rowPerPageOptions?.limit || pageOptionsValues[0]
 
   useEffect(() => {
@@ -47,6 +49,8 @@ export const Pagination: React.FC<PaginationProps> = ({
       }
     }
   }, [rowPerPageOptions, pageOptionsValues, limit])
+
+  if (totalPages <= 1 && !rowPerPageOptions) return null
 
   return (
     <Stack

@@ -39,7 +39,7 @@ export const Empty: StoryFn<typeof _Table> = () => {
   const headLabels = ['Nome', 'Stato', '']
   return (
     <_Table isEmpty={true} headLabels={headLabels}>
-      {}
+      {null}
     </_Table>
   )
 }
