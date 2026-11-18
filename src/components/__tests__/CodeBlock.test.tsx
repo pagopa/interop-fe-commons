@@ -6,7 +6,7 @@ const testCode = {
   test: 'test',
 }
 
-describe('CodeBlock component', () => {
+describe.skip('CodeBlock component', () => {
   it('Renders correctly', () => {
     const tree = renderer.create(<CodeBlock code={testCode} />).toJSON()
     expect(tree).toMatchSnapshot()

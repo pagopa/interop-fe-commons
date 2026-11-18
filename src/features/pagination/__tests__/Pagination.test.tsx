@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 
 describe('Pagination component', () => {
-  describe('Render pagination without rowsPerPage selector and with 120 as total elements', () => {
+  describe('Render pagination without rowsPerPage selector and with 100 as total elements', () => {
     it('Should render correctly', () => {
       const screen = render(<PaginationExample />)
       expect(screen).toBeDefined()
@@ -17,14 +17,14 @@ describe('Pagination component', () => {
       expect(selectElement).toBeNull()
     })
 
-    it('If total elements are 120 and default limit is 12, total pages should be 10', () => {
+    it('If total elements are 100 and default limit is 12, total pages should be 9', () => {
       const screen = render(<PaginationExample />)
       const paginationElement = screen.getByRole('navigation')
 
       expect(paginationElement).toBeDefined()
-      const lastButton = screen.getByText('10')
+      const lastButton = screen.getByRole('button', { name: 'Go to page 9' })
       expect(lastButton).toBeDefined()
-      const nextButton = screen.queryByText('11')
+      const nextButton = screen.queryByRole('button', { name: 'Go to page 10' })
       expect(nextButton).toBeNull()
     })
 
@@ -41,7 +41,7 @@ describe('Pagination component', () => {
     })
   })
 
-  describe('Render pagination with rowsPerPage selector enabled and with 120 as total elements', () => {
+  describe('Render pagination with rowsPerPage selector enabled and with 100 as total elements', () => {
     it('Should render correctly', () => {
       const screen = render(<PaginationExample withRowsPerPage />)
       expect(screen).toBeDefined()
