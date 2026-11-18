@@ -59,11 +59,73 @@ export const _PaginationExample: React.FC<{ withRowsPerPage?: boolean }> = ({
   )
 }
 
+export const _PaginationExampleWithoutTotalPages: React.FC = () => {
+  const { paginationParams, paginationProps, getTotalPageCount } = usePagination()
+  const [debug, setDebug] = React.useState(false)
+  const location = useLocation()
+  const totalPages = getTotalPageCount(0)
+
+  const { onLimitChange, ...restPaginationProps } = paginationProps
+
+  const rowsPerPageProps = {
+    onLimitChange: onLimitChange,
+    limit: paginationParams.limit,
+  }
+
+  const urlSearchParams = new URLSearchParams(location.search)
+  // Remove all params except offset
+  urlSearchParams.delete('id')
+  for (const key of urlSearchParams.keys()) {
+    if (key !== 'offset') {
+      urlSearchParams.delete(key)
+    }
+  }
+
+  return (
+    <>
+      <Container sx={{ mt: 4, p: 2 }}>
+        <Pagination
+          totalPages={totalPages}
+          {...restPaginationProps}
+          rowPerPageOptions={rowsPerPageProps}
+        />
+      </Container>
+      <Container sx={{ bgcolor: debug ? 'white' : 'initial', mt: 4, py: 4 }}>
+        <Button variant="naked" onClick={() => setDebug(!debug)}>
+          {debug ? 'Hide' : 'Show'} debug values
+        </Button>
+        {debug && (
+          <Stack mt={2} spacing={2}>
+            <Box>
+              <Typography variant="subtitle1">URL search param</Typography>
+              <CodeBlock code={'?' + urlSearchParams.toString()} />
+            </Box>
+            <Box>
+              <Typography variant="subtitle1">paginationParams</Typography>
+              <CodeBlock code={paginationParams} />
+            </Box>
+          </Stack>
+        )}
+      </Container>
+    </>
+  )
+}
+
 export const PaginationExample: React.FC<{ withRowsPerPage?: boolean }> = ({ withRowsPerPage }) => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="*" element={<_PaginationExample withRowsPerPage={withRowsPerPage} />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+export const PaginationExampleWithoutTotalPages: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<_PaginationExampleWithoutTotalPages />} />
       </Routes>
     </BrowserRouter>
   )
