@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, waitFor, within } from '@testing-library/react'
-import { PaginationExample } from '../stories/PaginationExample'
+import { PaginationExample, PaginationExampleWithoutTotalPages } from '../stories/PaginationExample'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 
@@ -17,22 +17,20 @@ describe('Pagination component', () => {
       expect(selectElement).toBeNull()
     })
 
-    it('If total elements are 100 and default limit is 10, total pages should be 10', () => {
+    it('If total elements are 100 and default limit is 12, total pages should be 9', () => {
       const screen = render(<PaginationExample />)
       const paginationElement = screen.getByRole('navigation')
 
       expect(paginationElement).toBeDefined()
-      const lastButton = screen.getByText('10')
+      const lastButton = screen.getByRole('button', { name: 'Go to page 9' })
       expect(lastButton).toBeDefined()
-      const nextButton = screen.queryByText('11')
+      const nextButton = screen.queryByRole('button', { name: 'Go to page 10' })
       expect(nextButton).toBeNull()
     })
 
     it('If user click on page 5, page 5 should be selected', async () => {
       const screen = render(<PaginationExample />)
-      const pageButton = screen.getByRole('button', {
-        name: 'Go to page 5',
-      })
+      const pageButton = screen.getByRole('button', { name: 'Go to page 5' })
 
       expect(pageButton).not.toBeNull()
       await userEvent.click(pageButton, { delay: 2 })
@@ -49,10 +47,12 @@ describe('Pagination component', () => {
       expect(screen).toBeDefined()
     })
 
-    it('Should be available [10,24,36] as rows per page as default options', async () => {
+    it('Should be available [12,24,36] as rows per page as default options', async () => {
       const screen = render(<PaginationExample withRowsPerPage />)
       const selectElement = screen.getByTestId('rows-per-page-select')
-      const selectButton = within(selectElement).getByRole('button')
+      const selectButton = within(selectElement).getByRole('button', {
+        name: 'Select number of rows per page',
+      })
 
       expect(selectElement).toBeDefined()
       await userEvent.click(selectButton)
@@ -61,10 +61,17 @@ describe('Pagination component', () => {
         const getOptions = screen.getAllByRole('option')
         expect(getOptions).toHaveLength(3)
 
-        expect(getOptions[0]).toHaveTextContent('10')
+        expect(getOptions[0]).toHaveTextContent('12')
         expect(getOptions[1]).toHaveTextContent('24')
         expect(getOptions[2]).toHaveTextContent('36')
       })
     })
+  })
+
+  it('Should not render rows per page selector if total pages are 0', () => {
+    const screen = render(<PaginationExampleWithoutTotalPages />)
+    const selectElement = screen.queryByTestId('rows-per-page-select')
+
+    expect(selectElement).toBeNull()
   })
 })
