@@ -1,9 +1,8 @@
 import React from 'react'
 import { generateTestingRoutes, renderRoutes } from './common.mocks'
 import { createMemoryHistory } from 'history'
-import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { expectTypeOf, vi } from 'vitest'
+import { expectTypeOf } from 'vitest'
 
 const {
   routes,
@@ -62,28 +61,57 @@ describe('Breadcrumbs', () => {
   })
 
   it('should navigate to the correct route when clicking on a breadcrumb link', async () => {
-    const { getByRole, getByText, history } = renderBreadcrumb()
+    const { getByRole, queryByRole, history } = renderBreadcrumb()
     const page1Link = getByRole('link', { name: 'page-1' })
+    expect(queryByRole('link', { name: 'dynamic-page-1' })).not.toBeInTheDocument()
     const user = userEvent.setup()
     await user.click(page1Link)
     expect(history.location.pathname).toEqual('/page-1')
-    expect(getByText('home')).toBeInTheDocument()
-    expect(screen.queryByRole('link', { name: 'home' })).not.toBeInTheDocument()
+    const homeLink = getByRole('link', { name: 'home' })
+    expect(homeLink).toHaveAttribute('href', '/')
+    await user.click(homeLink)
+    expect(history.location.pathname).toEqual('/')
   })
 
   it('should navigate to the correct route when clicking on a breadcrumb link (localized)', async () => {
-    const { getByRole, getByText, history } = renderLocalizedBreadcrumb()
+    const { getByRole, queryByRole, history } = renderLocalizedBreadcrumb()
     const page1Link = getByRole('link', { name: 'page-1' })
+    expect(queryByRole('link', { name: 'dynamic-page-1' })).not.toBeInTheDocument()
     const user = userEvent.setup()
     await user.click(page1Link)
     expect(history.location.pathname).toEqual('/it/page-1')
-    expect(getByText('home')).toBeInTheDocument()
-    expect(screen.queryByRole('link', { name: 'home' })).not.toBeInTheDocument()
+    const homeLink = getByRole('link', { name: 'home' })
+    expect(homeLink).toHaveAttribute('href', '/it/')
+    await user.click(homeLink)
+    expect(history.location.pathname).toEqual('/it/')
   })
 
   it('should have the correct routeLabels type', () => {
     type RouteLabels = Parameters<typeof Breadcrumbs>['0']['routeLabels']
 
     expectTypeOf<RouteLabels>().toMatchTypeOf<{ [K in keyof typeof routes]: string | false }>()
+  })
+
+  it('should restore query params from the configured state key only on the parent link', async () => {
+    const history = createMemoryHistory({
+      initialEntries: [
+        {
+          pathname: '/page-1/test-id',
+          state: { listQuery: { page: '2', search: 'test value' } },
+        },
+      ],
+    })
+    const { getByRole } = renderRoutes(
+      <Breadcrumbs routeLabels={routeLabels} parentQueryParamsStateKey="listQuery" />,
+      reactRouterDOMRoutes,
+      history
+    )
+
+    expect(getByRole('link', { name: 'home' })).toHaveAttribute('href', '/')
+    await userEvent.setup().click(getByRole('link', { name: 'page-1' }))
+
+    expect(history.location.pathname).toBe('/page-1')
+    expect(new URLSearchParams(history.location.search).get('page')).toBe('2')
+    expect(new URLSearchParams(history.location.search).get('search')).toBe('test value')
   })
 })
