@@ -71,7 +71,11 @@ export function generateBreadcrumbs<
       <MIBreadcrumbs sx={{ mb: 1 }}>
         {breadcrumbSegments.map(({ label, path }, i) => {
           if (i === breadcrumbSegments.length - 1) {
-            return <span key={i}>{label}</span>
+            return (
+              <span key={i} aria-current="page">
+                {label}
+              </span>
+            )
           }
 
           const isRightBehindCurrent = i === breadcrumbSegments.length - 2
