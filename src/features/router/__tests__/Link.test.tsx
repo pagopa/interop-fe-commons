@@ -71,6 +71,20 @@ describe('Link', () => {
     expect(history.location.pathname).toEqual('/page-1/test-id')
     expect(history.location.search).toContain('test=1')
   })
+
+  it('should set history state on navigation', async () => {
+    const state = { from: 'page-1' }
+    const { history, getByRole } = renderRoutes(
+      <Link to="PAGE_2" options={{ state }}>
+        Go to page2
+      </Link>,
+      reactRouterDOMRoutes
+    )
+
+    await userEvent.setup().click(getByRole('link'))
+
+    expect(history.location.state).toEqual(state)
+  })
 })
 
 describe('Link (as button)', () => {
@@ -115,6 +129,20 @@ describe('Link (as button)', () => {
 
     expect(history.location.pathname).toEqual('/page-1/test-id')
     expect(history.location.search).toContain('test=1')
+  })
+
+  it('should set history state on navigation', async () => {
+    const state = { from: 'page-1' }
+    const { history, getByRole } = renderRoutes(
+      <Link as="button" to="PAGE_2" options={{ state }}>
+        Go to page2
+      </Link>,
+      reactRouterDOMRoutes
+    )
+
+    await userEvent.setup().click(getByRole('link'))
+
+    expect(history.location.state).toEqual(state)
   })
 
   it('should have the "to" prop typed correctly', () => {

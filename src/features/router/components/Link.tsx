@@ -15,7 +15,8 @@ import { omit, prefixPathnameWithLang } from '../router.utils'
 import { useTranslation } from 'react-i18next'
 
 export interface LinkOptions extends NavigateOptions {
-  urlParams: Record<string, string>
+  urlParams?: Record<string, string>
+  state?: Record<string, unknown>
 }
 
 export function generateTypedLink<TRoutes extends Routes>(
@@ -59,6 +60,7 @@ export function generateTypedLink<TRoutes extends Routes>(
         ref,
         LinkComponent: RRDLink,
         to: url,
+        state: props.options?.state,
       } as MUIButtonProps
 
       return <Button {...buttonProps} />
@@ -69,6 +71,7 @@ export function generateTypedLink<TRoutes extends Routes>(
       ref,
       component: RRDLink,
       to: url,
+      state: props.options?.state,
     } as MUILinkProps
 
     return <MUILink {...linkProps} />

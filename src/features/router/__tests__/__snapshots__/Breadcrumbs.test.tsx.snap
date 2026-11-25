@@ -6,11 +6,12 @@ exports[`Breadcrumbs > should match the snapshot (localized) 1`] = `
     <nav>
       <ol>
         <li>
-          <span
-            aria-current="page"
+          <a
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-159dm8u-MuiTypography-root-MuiLink-root"
+            href="/it/"
           >
             home
-          </span>
+          </a>
         </li>
         <li
           aria-hidden="true"
@@ -19,7 +20,8 @@ exports[`Breadcrumbs > should match the snapshot (localized) 1`] = `
         </li>
         <li>
           <a
-            href="#"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-159dm8u-MuiTypography-root-MuiLink-root"
+            href="/it/page-1"
           >
             page-1
           </a>
@@ -30,9 +32,7 @@ exports[`Breadcrumbs > should match the snapshot (localized) 1`] = `
           /
         </li>
         <li>
-          <span
-            aria-current="page"
-          >
+          <span>
             dynamic-page-1
           </span>
         </li>
@@ -48,11 +48,12 @@ exports[`Breadcrumbs > should match the snapshot 1`] = `
     <nav>
       <ol>
         <li>
-          <span
-            aria-current="page"
+          <a
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-159dm8u-MuiTypography-root-MuiLink-root"
+            href="/"
           >
             home
-          </span>
+          </a>
         </li>
         <li
           aria-hidden="true"
@@ -61,7 +62,8 @@ exports[`Breadcrumbs > should match the snapshot 1`] = `
         </li>
         <li>
           <a
-            href="#"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-159dm8u-MuiTypography-root-MuiLink-root"
+            href="/page-1"
           >
             page-1
           </a>
@@ -72,9 +74,7 @@ exports[`Breadcrumbs > should match the snapshot 1`] = `
           /
         </li>
         <li>
-          <span
-            aria-current="page"
-          >
+          <span>
             dynamic-page-1
           </span>
         </li>
