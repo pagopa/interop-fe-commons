@@ -32,7 +32,9 @@ exports[`Breadcrumbs > should match the snapshot (localized) 1`] = `
           /
         </li>
         <li>
-          <span>
+          <span
+            aria-current="page"
+          >
             dynamic-page-1
           </span>
         </li>
@@ -74,7 +76,9 @@ exports[`Breadcrumbs > should match the snapshot 1`] = `
           /
         </li>
         <li>
-          <span>
+          <span
+            aria-current="page"
+          >
             dynamic-page-1
           </span>
         </li>
